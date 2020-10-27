@@ -29,7 +29,7 @@ public class DistritoServiceImpl implements DistritoService, Serializable {
 	@Transactional
 	@Override
 	public Distrito update(Distrito entity) throws Exception {
-		return distritoRepository.update(entity);
+		return distritoRepository.save(entity);
 	}
 
 	@Transactional
@@ -53,6 +53,6 @@ public class DistritoServiceImpl implements DistritoService, Serializable {
 	@Transactional(readOnly = true)
 	@Override
 	public List<Distrito> findByNombre(String nombre) throws Exception {
-		return distritoRepository.findByNombreDistrito(nombre);
+		return distritoRepository.findByNombreDistritoLike(nombre);
 	}
 }

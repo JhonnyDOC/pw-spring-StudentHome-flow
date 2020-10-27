@@ -34,8 +34,8 @@ public class EstudianteServiceImpl implements EstudianteService, Serializable{
 	@Transactional
 	@Override
 	public Estudiante update(Estudiante entity) throws Exception {
-		personaRepository.update(entity.getPersona());
-		return estudianteRepository.update(entity);
+		personaRepository.save(entity.getPersona());
+		return estudianteRepository.save(entity);
 	}
 	
 	@Transactional
@@ -59,25 +59,27 @@ public class EstudianteServiceImpl implements EstudianteService, Serializable{
 		return estudianteRepository.findAll();
 	}
 
-	@Transactional(readOnly = true)
-	@Override
-	public List<Estudiante> findByNombre(String nombrePersona) throws Exception {
-		// TODO Auto-generated method stub
-		return estudianteRepository.findByNombrePersona(nombrePersona);
-	}
-
-	@Transactional(readOnly = true)
-	@Override
-	public List<Estudiante> findByApellido(String apellidoPersona) throws Exception {
-		// TODO Auto-generated method stub
-		return estudianteRepository.findByApellidoPersona(apellidoPersona);
-	}
-
+	/*
 	@Transactional(readOnly = true)
 	@Override
 	public Optional<Estudiante> findBydni(String dni) throws Exception {
 		// TODO Auto-generated method stub
 		return estudianteRepository.findByDni(dni);
 	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Estudiante> findByNombre(String nombrePersona) throws Exception {
+		// TODO Auto-generated method stub
+		return estudianteRepository.findByNombrePersonaLike(nombrePersona);
+	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public List<Estudiante> findByApellido(String apellidoPersona) throws Exception {
+		// TODO Auto-generated method stub
+		return estudianteRepository.findByApellidoPersonaLike(apellidoPersona);
+	}
+	*/
 	
 }

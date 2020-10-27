@@ -6,10 +6,12 @@ import java.util.Optional;
 
 import pe.edu.upc.studenthome.models.entities.Estudiante;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
-	List<Estudiante> findByNombrePersona(String nombrePersona) throws Exception;
-	List<Estudiante> findByApellidoPersona(String apellidoPersona) throws Exception;
-	Optional<Estudiante> findByDni(String dni) throws Exception;
+	//List<Estudiante> findByNombrePersonaLike(String nombrePersona) throws Exception;
+	//List<Estudiante> findByApellidoPersonaLike(String apellidoPersona) throws Exception;
+	//Optional<Estudiante> findByDni(String dni) throws Exception;
 }
+

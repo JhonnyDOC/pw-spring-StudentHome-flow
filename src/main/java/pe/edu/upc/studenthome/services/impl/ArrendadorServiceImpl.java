@@ -34,8 +34,8 @@ public class ArrendadorServiceImpl implements ArrendadorServices, Serializable {
 	@Transactional
 	@Override
 	public Arrendador update(Arrendador entity) throws Exception {
-		personaRepository.update(entity.getPersona());
-		return arrendadorRepository.update(entity);
+		personaRepository.save(entity.getPersona());
+		return arrendadorRepository.save(entity);
 	}
 	
 	@Transactional
@@ -57,16 +57,17 @@ public class ArrendadorServiceImpl implements ArrendadorServices, Serializable {
 		return arrendadorRepository.findAll();
 	}
 
+	/*
 	@Transactional(readOnly = true)
 	@Override
 	public List<Arrendador> findByNombre(String nombrePersona) throws Exception {
-		return arrendadorRepository.findByNombrePersona(nombrePersona);
+		return arrendadorRepository.findByNombrePersonaLike(nombrePersona);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
 	public List<Arrendador> findByApellido(String apellidoPersona) throws Exception {
-		return arrendadorRepository.findByApellidoPersona(apellidoPersona);
+		return arrendadorRepository.findByApellidoPersonaLike(apellidoPersona);
 	}
 
 	@Transactional(readOnly = true)
@@ -74,5 +75,6 @@ public class ArrendadorServiceImpl implements ArrendadorServices, Serializable {
 	public Optional<Arrendador> findBydni(String dni) throws Exception {
 		return arrendadorRepository.findByDni(dni);
 	}
+	*/
 
 }
