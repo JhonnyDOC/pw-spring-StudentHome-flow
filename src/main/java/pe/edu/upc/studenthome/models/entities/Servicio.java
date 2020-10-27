@@ -20,7 +20,7 @@ public class Servicio {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "nombre_servicio", length = 20, nullable = false)
+	@Column(name = "nombre_servicio", length = 50, nullable = false)
 	private String nombreServicio;
 	
 	@OneToMany(mappedBy = "servicio")

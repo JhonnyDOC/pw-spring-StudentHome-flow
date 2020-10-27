@@ -33,7 +33,7 @@ public class Renta {
 	@Temporal(TemporalType.DATE)
 	private Date fechaRentaFin;
 	
-	@Column(name = "descripcion_renta",length = 50 ,nullable = false)
+	@Column(name = "descripcion_renta",length = 150 ,nullable = false)
 	private String descripcionRenta;
 	
 	@Column(name = "descuento", nullable = true)

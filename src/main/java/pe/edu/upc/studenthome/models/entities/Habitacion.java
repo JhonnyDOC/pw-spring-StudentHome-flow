@@ -39,10 +39,10 @@ public class Habitacion {
 	@Column(name = "precio", nullable = false)
 	private Float precio;
 	
-	@Column(name = "descripcion_inmueble", length = 50, nullable = false)
+	@Column(name = "descripcion_inmueble", length = 150, nullable = false)
 	private String descripcionInmueble;
 	
-	@Column(name = "descripcion_amueblado", length = 50, nullable = true)
+	@Column(name = "descripcion_amueblado", length = 150, nullable = true)
 	private String descripcionAmueblado;
 	
 	@Column(name = "imagen_1", nullable = false)

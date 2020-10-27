@@ -29,8 +29,14 @@ public class Arrendador {
 	@Column(name = "ruc", length = 11, nullable = false)
 	private String ruc;
 	
-	@Column(name = "descripcion", length = 30, nullable = true)
+	@Column(name = "descripcion", length = 150, nullable = true)
 	private String descripcion;
+	
+	@Column(name = "contraseñaArrendador", nullable = false)
+	private String contraseñaArrendador;
+	
+	@Column(name = "usuarioArrendador", nullable = false)
+	private String usuarioArrendador;
 	
 	@OneToMany(mappedBy = "arrendador")
 	private List<Habitacion> habitaciones;
@@ -59,6 +65,26 @@ public class Arrendador {
 		this.distritoId = 0;
 		persona = new Persona();
 	}
+	
+	public String getContraseñaArrendador() {
+		return contraseñaArrendador;
+	}
+
+
+	public void setContraseñaArrendador(String contraseñaArrendador) {
+		this.contraseñaArrendador = contraseñaArrendador;
+	}
+
+
+	public String getUsuarioArrendador() {
+		return usuarioArrendador;
+	}
+
+
+	public void setUsuarioArrendador(String usuarioArrendador) {
+		this.usuarioArrendador = usuarioArrendador;
+	}
+
 
 	public Long getId() {
 		return id;

@@ -19,7 +19,7 @@ public class TipoInmueble {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "nombre_tipo_inmueble", length = 30, nullable = false)
+	@Column(name = "nombre_tipo_inmueble", length = 50, nullable = false)
 	private String nombreTipoInmueble;
 	
 	@OneToMany(mappedBy = "tipoInmueble")

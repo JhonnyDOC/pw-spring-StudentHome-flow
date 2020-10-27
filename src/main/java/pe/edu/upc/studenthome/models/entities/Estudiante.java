@@ -24,11 +24,11 @@ public class Estudiante {
 	@JoinColumn(name = "id")
 	private Persona persona;
 	
-	@Column(name = "descripcion_univ", length = 50, nullable = false)
+	@Column(name = "descripcion_univ", length = 150, nullable = false)
 	private String descripcionUniv;
 	
 	@Column(name = "roomate", nullable = false)
-	private Boolean roomate;
+	private String roomate;
 	
 	@Column(name = "usuario_estudiante")
 	private String usuarioEstudiante;
@@ -80,11 +80,11 @@ public class Estudiante {
 		this.descripcionUniv = descripcionUniv;
 	}
 
-	public Boolean getRoomate() {
+	public String getRoomate() {
 		return roomate;
 	}
 
-	public void setRoomate(Boolean roomate) {
+	public void setRoomate(String roomate) {
 		this.roomate = roomate;
 	}
 

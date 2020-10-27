@@ -19,7 +19,7 @@ public class Ciudad {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "nombre_ciudad", length = 20, nullable = false)
+	@Column(name = "nombre_ciudad", length = 100, nullable = false)
 	private String nombreCiudad;
 	
 	@OneToMany

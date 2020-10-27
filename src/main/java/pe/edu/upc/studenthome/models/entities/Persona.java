@@ -15,10 +15,10 @@ public class Persona {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nombre_persona", length = 20, nullable = false)
+	@Column(name = "nombre_persona", length = 50, nullable = false)
 	private String nombrePersona;
 	
-	@Column(name = "apellido_persona", length = 30, nullable = false)
+	@Column(name = "apellido_persona", length = 50, nullable = false)
 	private String apellidoPersona;
 	
 	@Column(name = "numero_telefono", length = 20, nullable = false)
@@ -27,7 +27,7 @@ public class Persona {
 	@Column(name = "dni", length = 8, nullable = false)
 	private String dni;
 	
-	@Column(name = "direccion", length = 50, nullable = false)
+	@Column(name = "direccion", length = 150, nullable = false)
 	private String direccion;
 	
 	@OneToOne(mappedBy = "persona")
