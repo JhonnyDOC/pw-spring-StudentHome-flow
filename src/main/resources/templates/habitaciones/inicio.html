@@ -67,8 +67,7 @@
 	        <th scope="col">arrendador</th>
 	          <th scope="col">distrito</th>
 	            <th scope="col">tipo de inmueble</th>
-	            <th scope="col">habitacion servicio</th>
-	            <th scope="col">renta</th>
+
 	            
 	    </tr>
 	  </thead>
@@ -91,7 +90,8 @@
 	       <td th:text="${habitacion.precio}"></td>
 	        <td th:text="${habitacion.descripcionInmueble}"></td>
 	         <td th:text="${habitacion.descripcionAmueblado}"></td>
-	         <td th:text="${habitacion.imagen1}"></td>
+	         <td> <img th:src="${habitacion.imagen1}"></td>
+	         
 	         <td th:text="${habitacion.imagen2}"></td>
 	         <td th:text="${habitacion.imagen3}"></td>
 	         <td th:text="${habitacion.imagen4}"></td>
@@ -177,7 +177,13 @@
 			</select>
 		</div>
 		
-		
+		<div class="form-group row">
+			<label class="col-md-3" for="tipoInmueble">TipoInmueble:</label> <select
+				th:field="*{tipoInmueble}" class="form-control-sm col-md-6" id="tipoInmueble">
+				<option th:each="tipoInmueble:${tipoInmuebles}" th:value="${tipoInmueble.id}"
+					th:text="${tipoInmueble.nombreTipoInmueble}" />
+			</select>
+		</div>
 	   
 	    
 	    </div>
