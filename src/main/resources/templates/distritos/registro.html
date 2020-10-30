@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+
+<title>Distritos</title>
+</head>
+<body>
+
+	<form th:action="@{/distritos/save}" th:object="${distrito}"
+		method="post">
+
+		<div class="card-header">Registro de Distritos</div>
+		<div class="form-group col-md-6">
+			<label for="formGroupExampleInput">Nombre del Distrito :</label> <input
+				type="text" class="form-control" id="formGroupExampleInput"
+				th:field="*{nombreDistrito}"
+				placeholder="Escribir el nombre del distrito">
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3" for="ciudad">Ciudad:</label> <select
+				th:field="*{ciudad}" class="form-control-sm col-md-6" id="ciudad">
+				<option th:each="ciudad:${ciudades}" th:value="${ciudad.id}"
+					th:text="${ciudad.nombreCiudad}" />
+			</select>
+		</div>
+
+		<div class="form-row">
+			<div class="card text-center">
+				<button type="submit" class="btn btn-info">
+					<i class="fas fa-save"></i> Grabar
+				</button>
+			</div>
+			<div class="card text-center">
+				<a th:href="@{/distritos/login}" class="btn btn-danger"><i
+					class="fas fa-ban"></i> Cancelar</a>
+			</div>
+		</div>
+
+
+	</form>
+
+	<table class="table table-striped col-md-6">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Distrito</th>
+				<th scope="col">Ciudad</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="distrito : ${distritos}">
+				<th th:text="${distrito.id}" scope="row">.</th>
+				<td th:text="${distrito.nombreDistrito}">.</td>
+				<td th:text="${distrito.ciudad.nombreCiudad}">.</td>
+				<td></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+	<script th:src="@{js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{js/bootstrap.min.js}"></script>
+
+</body>
+</html>
