@@ -2,6 +2,7 @@ package pe.edu.upc.studenthome.service;
 
 import java.util.List;
 
+import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Habitacion;
 
 import java.util.List;
@@ -9,6 +10,6 @@ import java.util.List;
 import pe.edu.upc.studenthome.models.entities.Habitacion;
 
 public interface HabitacionService extends CrudService<Habitacion, Integer>{
-	//List<Habitacion> findByNombreDistrito(String nombreDistrito) throws Exception;
-	//List<Habitacion> findByNombreArrendador(String nombreArrendador) throws Exception;
+	List<Habitacion> findPorDistrito(String nombreDistrito) throws Exception;
+	
 }
