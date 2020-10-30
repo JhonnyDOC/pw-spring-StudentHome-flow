@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<title>Registro de rentas</title>
+</head>
+<body>
+
+	<h1 align="center" class="display-4">Registro de rentas</h1>
+	<br>
+
+	<!-- crear un formulario, ingresar data y enviarlo al controller -->
+	<form th:action="@{/rentas/save}" th:object="${renta}" method="post">
+		<section class="container pt-3">
+			<div class="card text-left	">
+					<div class="card-header" >Registrar renta</div>
+					<div class="card-body text-left">
+					
+					
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="formGroupExampleInput">Fecha de inicio de renta:</label> 
+			
+					<input type="date" class="form-control" 
+						th:field="*{fechaRentaInicio}" placeholder="AA/MM/DD">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="formGroupExampleInput">	Fecha de fin de renta:</label>
+					
+					<input type="date" class="form-control" th:field="*{fechaRentaFin}"
+						placeholder="AA/MM/DD" >
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-10">
+					<label for="formGroupExampleInput">Descripción de la renta:</label> 
+						<input type="text" class="form-control"
+						th:field="*{descripcionRenta}" placeholder="Descripcion de renta">
+				</div>
+			</div>
+			
+			<div class="form-row">
+			<div class="form-group col-md-6">
+			<label for="formGroupExampleInput">Descuento:</label>
+				<input type="text" class="form-control" th:field="*{descuento}"
+					placeholder="Descuento">
+			</div>
+			<div class="form-group col-md-6">
+			<label for="formGroupExampleInput">Cuota por demora en el pago:</label>
+				<input type="text" class="form-control" th:field="*{demoraPago}"
+					placeholder="Pago por demora">
+			</div>
+			</div>
+			
+			<div class="form-row">
+			<div class="form-group col-md-6">
+			<label for="formGroupExampleInput">Precio parcial:</label>
+				<input type="text" class="form-control" th:field="*{precioParcial}"
+					placeholder="Precio parcial">
+			</div>
+			<div class="form-group col-md-6">
+			<label for="formGroupExampleInput">Precio final:</label>
+				<input type="text" class="form-control" th:field="*{precioFinal}"
+					placeholder="Precio final">
+			</div>
+			</div>
+
+
+			</div>
+		
+			
+
+		<!-- Crear boton, tipo submit cuando un boton es vinculado a un formulario. Envia el contenido del formulario al archivo curso/save -->
+		<br>
+		<div class="card text-center ">
+			<button type="submit" class="btn btn-success">
+				<i class="fas fa-save"></i> Guardar
+			</button>
+		</div>
+		</div>
+		
+		</section>
+	</form>
+
+
+
+	<br>
+	<br>
+	<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Fecha inicio de renta</th>
+				<th scope="col">Fecha fin de renta</th>
+				<th scope="col">Descripción de renta</th>
+				<th scope="col">Descuento</th>
+				<th scope="col">Demora pago</th>
+				<th scope="col">Precio parcial</th>
+				<th scope="col">Precio final</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="renta : ${rentas}">
+				<th th:text="${renta.id}" scope="row">.</th>
+				<td th:text="${renta.fechaRentaInicio}">.</td>
+				<td th:text="${renta.fechaRentaFin}">.</td>
+				<td th:text="${renta.descripcionRenta}"></td>
+				<td th:text="${renta.descuento}"></td>
+				<td th:text="${renta.demoraPago}"></td>
+				<td th:text="${renta.precioParcial}"></td>
+				<td th:text="${renta.precioFinal}"></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+	<br>
+	<p align="center">StudentHome 2020</p>
+	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap..min.js}"></script>
+</body>
+</html>
