@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import pe.edu.upc.studenthome.models.entities.Ciudad;
 import pe.edu.upc.studenthome.models.entities.Distrito;
+import pe.edu.upc.studenthome.service.CiudadService;
 import pe.edu.upc.studenthome.service.DistritoService;
 
 
@@ -26,13 +28,17 @@ public class DistritoController {
 	@Autowired
 	private DistritoService distritoService;
 	
+	@Autowired
+	private CiudadService ciudadService;
+	
 	@GetMapping
 	public String inicio(Model model) {
 		Distrito distrito = new Distrito();
-		
 		try {
 			List<Distrito> distritos = distritoService.findAll();
+			List<Ciudad> ciudades = ciudadService.findAll();
 			model.addAttribute("distritos", distritos);
+			model.addAttribute("ciudades", ciudades);
 			model.addAttribute("distrito", distrito);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
