@@ -1,7 +1,6 @@
 package pe.edu.upc.studenthome.models.entities;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -13,8 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 
 @Entity
@@ -26,12 +24,12 @@ public class Renta {
 	private Integer id;
 	
 	@Column(name = "fecha_renta_inicio", nullable = false)
-	@Temporal(TemporalType.DATE)
-	private Date fechaRentaInicio;
+	//@Temporal(TemporalType.DATE)
+	private String fechaRentaInicio;
 	
 	@Column(name = "fecha_renta_fin", nullable = false)
-	@Temporal(TemporalType.DATE)
-	private Date fechaRentaFin;
+	//@Temporal(TemporalType.DATE)
+	private String fechaRentaFin;
 	
 	@Column(name = "descripcion_renta",length = 150 ,nullable = false)
 	private String descripcionRenta;
@@ -79,19 +77,19 @@ public class Renta {
 		this.id = id;
 	}
 
-	public Date getFechaRentaInicio() {
+	public String getFechaRentaInicio() {
 		return fechaRentaInicio;
 	}
 
-	public void setFechaRentaInicio(Date fechaRentaInicio) {
+	public void setFechaRentaInicio(String fechaRentaInicio) {
 		this.fechaRentaInicio = fechaRentaInicio;
 	}
 
-	public Date getFechaRentaFin() {
+	public String getFechaRentaFin() {
 		return fechaRentaFin;
 	}
 
-	public void setFechaRentaFin(Date fechaRentaFin) {
+	public void setFechaRentaFin(String fechaRentaFin) {
 		this.fechaRentaFin = fechaRentaFin;
 	}
 
