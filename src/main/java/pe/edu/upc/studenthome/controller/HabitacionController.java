@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-
+import pe.edu.upc.studenthome.models.entities.Arrendador;
+import pe.edu.upc.studenthome.models.entities.Ciudad;
+import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Habitacion;
-
+import pe.edu.upc.studenthome.service.ArrendadorServices;
+import pe.edu.upc.studenthome.service.DistritoService;
 import pe.edu.upc.studenthome.service.HabitacionService;
 
 @Controller
@@ -24,6 +27,12 @@ import pe.edu.upc.studenthome.service.HabitacionService;
 
 public class HabitacionController {
 
+	@Autowired
+	private DistritoService distritoService;
+	
+	@Autowired
+	private ArrendadorServices arrendadorService;
+	
 	@Autowired
 	private HabitacionService habitacionService;
 	
@@ -43,6 +52,10 @@ public class HabitacionController {
 				habitaciones = habitacionService.findAll();
 			}
 			
+			List<Distrito> distritos = distritoService.findAll();
+			model.addAttribute("distritos", distritos);
+			List<Arrendador> arrendadores = arrendadorService.findAll();
+			model.addAttribute("arrendadores", arrendadores);
 			model.addAttribute("habitaciones", habitaciones);
 			model.addAttribute("habitacion", habitacion);
 		} catch (Exception e) {
