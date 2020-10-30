@@ -14,66 +14,64 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import pe.edu.upc.studenthome.models.entities.Estudiante;
-import pe.edu.upc.studenthome.service.EstudianteService;
+import pe.edu.upc.studenthome.models.entities.Ciudad;
+import pe.edu.upc.studenthome.service.CiudadService;
 
 @Controller
-@RequestMapping("/estudiantes")
-@SessionAttributes("estudiante")
-public class EstudianteController {
+@RequestMapping("/ciudades")
+@SessionAttributes("ciudad")
+public class CiudadController {
 	
 	@Autowired
-	private EstudianteService estudianteService;
+	private CiudadService ciudadService;
 	
 	@GetMapping
 	public String inicio(Model model) {
-		Estudiante estudiante = new Estudiante();
+		Ciudad ciudad = new Ciudad();
 		
 		try {
-			List<Estudiante> estudiantes = estudianteService.findAll();
-			model.addAttribute("estudiantes", estudiantes);
-			model.addAttribute("estudiante", estudiante);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println();
-		}
-		return "/estudiantes/registro";
-	}
-	
-	@PostMapping("save")
-	public String save(@ModelAttribute("estudiante") Estudiante estudiante, SessionStatus status) {
-		try {
-			estudianteService.save(estudiante);
+			List<Ciudad> ciudades = ciudadService.findAll();
+			model.addAttribute("ciudades", ciudades);
+			model.addAttribute("ciudad", ciudad);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
-		//Devuelve la URL mapping 
-		return "redirect:/estudiantes";
+		return "/ciudades/registro";
+	}
+	
+	@PostMapping("save")
+	public String save(@ModelAttribute("ciudad") Ciudad ciudad, SessionStatus status) {
+		try {
+			ciudadService.save(ciudad);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		return "redirect:/ciudades";
 	}
 	
 	@PostMapping("cancel")
 	public String cancel() {
-		
 		return "redirect:/login";
 	}
 	
 	@GetMapping("view-{id}")
-	public String view(@PathVariable("id") Long id, Model model) {
+	public String view(@PathVariable("id") Integer id, Model model) {
 		try {
-			Optional<Estudiante> optional = estudianteService.findById(id);
+			Optional<Ciudad> optional = ciudadService.findById(id);
 			if(optional.isPresent()) {
-				model.addAttribute("estudiante", optional.get());
-				return "estudiantes/view";
+				model.addAttribute("ciudad", optional.get());
+				return "ciudades/view";
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
-		return "redirect:/estudiantes";
+		return "redirect:/ciudades";
 	}
 	
 }
