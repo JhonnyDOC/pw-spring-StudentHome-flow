@@ -57,11 +57,13 @@ public class ArrendadorServiceImpl implements ArrendadorServices, Serializable {
 		return arrendadorRepository.findAll();
 	}
 
+	/*
 	@Override
 	public List<Arrendador> findByNombre(String nombrePersona) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	*/
 
 	/*
 	@Transactional(readOnly = true)
