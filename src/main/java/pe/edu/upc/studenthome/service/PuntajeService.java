@@ -7,4 +7,7 @@ import pe.edu.upc.studenthome.models.entities.Puntaje;
 
 public interface PuntajeService extends CrudService<Puntaje, Integer>{
 
+	//List<Puntaje> findByNombre(String nombrePuntaje) throws Exception;
+			//Optional<Puntaje> findById(Integer id) throws Exception;
+	
 }
