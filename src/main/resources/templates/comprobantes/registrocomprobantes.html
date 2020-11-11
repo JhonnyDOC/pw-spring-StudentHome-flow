@@ -12,23 +12,35 @@
 <body>
 
 	<h1 align="center" class="display-4">Registrar comprobante</h1>
-<br>
+	<br>
 
 	<!-- crear un formulario, ingresar data y enviarlo al controller -->
-	<form th:action="@{/comprobantes/save}" th:object="${tipocomprobante}" method="post">
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <input type="text" class="form-control" th:field="*{nombreTipoComprobante}" placeholder="Nombre tipo de comprobante">
-	    </div>
-	  </div>
-	  
-		<!-- Crear boton, tipo submit cuando un boton es vinculado a un formulario. Envia el contenido del formulario al archivo curso/save -->
-		<br>
-		<div class="card text-center ">
-		<button type="submit" class="btn btn-success">
-			<i class="fas fa-save"></i> Guardar
-		</button>
-		 </div>
+	<form th:action="@{/comprobantes/save}" th:object="${tipocomprobante}"
+		method="post">
+		<section class="container pt-3">
+			<div class="card text-left	">
+				<div class="card-header">Registrar renta</div>
+				<div class="card-body text-left">
+
+					<div class="form-row">
+						<div class="form-group col-md-12">
+							<label for="formGroupExampleInput">Nombre tipo de
+								comprobante:</label> <input type="text" class="form-control"
+								th:field="*{nombreTipoComprobante}"
+								placeholder="Escriba el tipo de comprobante que desea registrar">
+						</div>
+					</div>
+
+					<!-- Crear boton, tipo submit cuando un boton es vinculado a un formulario. Envia el contenido del formulario al archivo curso/save -->
+					<br>
+					<div class="card text-center ">
+						<button type="submit" class="btn btn-success">
+							<i class="fas fa-save"></i> Guardar
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
 	</form>
 	<br>
 	<br>
@@ -43,19 +55,30 @@
 		<tbody>
 			<tr th:each="tipocomprobante : ${tipocomprobantes}">
 				<th th:text="${tipocomprobante.id}" scope="row">.</th>
-				<td th:text="${tipocomprobante.nombreTipoComprobante}">.</td>
+				<td><a th:href="@{'/comprobantes/view-' + ${tipocomprobante.id}}"
+					th:text="${tipocomprobante.nombreTipoComprobante}">.</a> </td> <!-- el <a sirve para linkear; a todo lo que sea direccion colocamos th -->
 				<td></td>
 			</tr>
 		</tbody>
 	</table>
 
+	<!-- Unorder list --> 
 
-<br>
- <br>
- <br>
- <br>
- <p align="center"> StudentHome 2020 </p>
- 
+	<ul th:each="tipocomprobante : ${tipocomprobantes}">
+		<li><a th:href="@{'/comprobantes/view-' + ${tipocomprobante.id}}">
+					<img alt="imagen" th:src="@{/images/UPC_logo_transparente.png}">
+					</a>	
+					<a th:href="@{'/comprobantes/view-' + ${tipocomprobante.id}}"
+					th:text="${tipocomprobante.nombreTipoComprobante}">.</a>
+		</li>
+	</ul>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<p align="center">StudentHome 2020</p>
+
 	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 	<script th:src="@{/js/bootstrap..min.js}"></script>
 </body>

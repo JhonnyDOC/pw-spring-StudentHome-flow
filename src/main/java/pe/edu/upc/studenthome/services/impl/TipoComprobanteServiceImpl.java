@@ -37,13 +37,13 @@ public class TipoComprobanteServiceImpl implements TipoComprobanteService, Seria
 		
 	}
 
-	@Transactional
+	@Transactional (readOnly = true)
 	@Override
 	public Optional<TipoComprobante> findById(Integer id) throws Exception {
 		return tipoComprobanteRepository.findById(id);
 	}
 
-	@Transactional
+	@Transactional (readOnly = true)
 	@Override
 	public List<TipoComprobante> findAll() throws Exception {
 		return tipoComprobanteRepository.findAll();
