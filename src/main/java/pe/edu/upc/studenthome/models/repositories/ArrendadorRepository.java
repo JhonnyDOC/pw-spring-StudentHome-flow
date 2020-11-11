@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ArrendadorRepository extends JpaRepository<Arrendador, Long> {
-	//List<Arrendador> findByNombrePersonaLike(String nombrePersona) throws Exception;
+//	List<Arrendador> findByNombrePersonaLike(String nombrePersona) throws Exception;
 	//List<Arrendador> findByApellidoPersonaLike(String apellidoPersona) throws Exception;
 	//Optional<Arrendador> findByDni(String dni) throws Exception;
 }

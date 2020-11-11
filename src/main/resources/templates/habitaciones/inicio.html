@@ -67,8 +67,7 @@
 	        <th scope="col">arrendador</th>
 	          <th scope="col">distrito</th>
 	            <th scope="col">tipo de inmueble</th>
-	            <th scope="col">habitacion servicio</th>
-	            <th scope="col">renta</th>
+
 	            
 	    </tr>
 	  </thead>
@@ -91,7 +90,8 @@
 	       <td th:text="${habitacion.precio}"></td>
 	        <td th:text="${habitacion.descripcionInmueble}"></td>
 	         <td th:text="${habitacion.descripcionAmueblado}"></td>
-	         <td th:text="${habitacion.imagen1}"></td>
+	         <td> <img th:src="${habitacion.imagen1}"></td>
+	         
 	         <td th:text="${habitacion.imagen2}"></td>
 	         <td th:text="${habitacion.imagen3}"></td>
 	         <td th:text="${habitacion.imagen4}"></td>
@@ -160,15 +160,31 @@
 	    <div class="row">
 	     <div class="col">
 	      <input type="text" class="form-control" th:field="*{imagen1}" placeholder="imagen 1">
-	     <div class="col">
-	      <input type="text" class="form-control" th:field="*{arrendador}" placeholder="arrendador"> 
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{distrito}" placeholder="distrito"> 
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{tipoInmueble}" placeholder="tipo Inmueble"> 
-	    </div>
+	     
+	     <div class="form-group row">
+			<label class="col-md-3" for="arrendador">Arrendador:</label> <select
+				th:field="*{arrendador}" class="form-control-sm col-md-6" id="arrendador">
+				<option th:each="arrendador:${arrendadores}" th:value="${arrendador.id}"
+					th:text="${arrendador.Persona.nombrePersona}" />
+			</select>
+		</div>
+	    
+	    <div class="form-group row">
+			<label class="col-md-3" for="distrito">Distrito:</label> <select
+				th:field="*{distrito}" class="form-control-sm col-md-6" id="distrito">
+				<option th:each="distrito:${distritos}" th:value="${distrito.id}"
+					th:text="${distrito.nombreDistrito}" />
+			</select>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-md-3" for="tipoInmueble">TipoInmueble:</label> <select
+				th:field="*{tipoInmueble}" class="form-control-sm col-md-6" id="tipoInmueble">
+				<option th:each="tipoInmueble:${tipoInmuebles}" th:value="${tipoInmueble.id}"
+					th:text="${tipoInmueble.nombreTipoInmueble}" />
+			</select>
+		</div>
+	   
 	    
 	    </div>
 	  </div>

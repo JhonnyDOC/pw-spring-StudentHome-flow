@@ -16,75 +16,71 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import pe.edu.upc.studenthome.models.entities.Arrendador;
 import pe.edu.upc.studenthome.models.entities.Distrito;
-import pe.edu.upc.studenthome.models.entities.Habitacion;
-import pe.edu.upc.studenthome.models.entities.TipoInmueble;
 import pe.edu.upc.studenthome.service.ArrendadorServices;
 import pe.edu.upc.studenthome.service.DistritoService;
-import pe.edu.upc.studenthome.service.HabitacionService;
-import pe.edu.upc.studenthome.service.TipoInmuebleService;
 
 @Controller
-@RequestMapping("/habitaciones")
-
-public class HabitacionController {
-
-	@Autowired
-	private DistritoService distritoService;
+@RequestMapping("/arrendadores")
+@SessionAttributes("arrendador")
+public class ArrendadorController {
 	
 	@Autowired
 	private ArrendadorServices arrendadorService;
 	
 	@Autowired
-	private TipoInmuebleService tipoInmuebleService;
-	
-	@Autowired
-	private HabitacionService habitacionService;
+	private DistritoService distritoServices;
 	
 	@GetMapping
-	public String inicio(Model model , String keyword) {
-		Habitacion habitacion = new Habitacion();
-		
-		List<Habitacion> habitaciones;
+	public String inicio(Model model) {
+		Arrendador arrendador = new Arrendador();
 		
 		try {
-			if (keyword!=null)
-			{
-				habitaciones=habitacionService.findPorDistrito(keyword);
-			}
-			else
-			{
-				habitaciones = habitacionService.findAll();
-			}
-			
-			List<Distrito> distritos = distritoService.findAll();
-			model.addAttribute("distritos", distritos);
 			List<Arrendador> arrendadores = arrendadorService.findAll();
+			List<Distrito> distritos = distritoServices.findAll();
 			model.addAttribute("arrendadores", arrendadores);
-			
-			List<TipoInmueble> tipoInmuebles = tipoInmuebleService.findAll();
-			model.addAttribute("tipoInmuebles", tipoInmuebles);
-			
-			model.addAttribute("habitaciones", habitaciones);
-			model.addAttribute("habitacion", habitacion);
+			model.addAttribute("distritos", distritos);
+			model.addAttribute("arrendador", arrendador);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println();
 		}
-		return "/habitaciones/inicio";
+		return "/arrendadores/registro";
 	}
+
 	@PostMapping("save")
-	public String save(@ModelAttribute("habitacion") Habitacion habitacion, SessionStatus status) {
+	public String save(@ModelAttribute("arrendador") Arrendador arrendador, SessionStatus status) {
 		try {
-			habitacionService.save(habitacion);
+			arrendadorService.save(arrendador);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
 		//Devuelve la URL mapping 
-		return "redirect:/habitaciones";
+		return "redirect:/arrendadores";
+	}
+	
+	@PostMapping("cancel")
+	public String cancel() {
+		
+		return "redirect:/login";
+	}
+	
+	@GetMapping("view-{id}")
+	public String view(@PathVariable("id") Long id, Model model) {
+		try {
+			Optional<Arrendador> optional = arrendadorService.findById(id);
+			if(optional.isPresent()) {
+				model.addAttribute("arrendador", optional.get());
+				return "arrendadores/view";
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		return "redirect:/arrendadores";
 	}
 	
 }
-

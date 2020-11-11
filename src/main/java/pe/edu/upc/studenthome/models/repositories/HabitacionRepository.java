@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 @Repository
 public interface HabitacionRepository extends JpaRepository<Habitacion, Integer> {
 	
-	  @Query("SELECT h FROM Habitacion h WHERE h.direccion LIKE %?1%")
+	  @Query("SELECT h FROM Habitacion h WHERE h.distrito.nombreDistrito LIKE %?1%")
 	List<Habitacion> findPorDistrito(String nombreDistrito) throws Exception;
 	
 }
