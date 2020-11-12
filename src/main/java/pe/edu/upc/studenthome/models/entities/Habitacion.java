@@ -45,6 +45,9 @@ public class Habitacion {
 	@Column(name = "descripcion_amueblado", length = 150, nullable = true)
 	private String descripcionAmueblado;
 	
+	@Column(name = "descripcion_servicios", length = 150, nullable = true)
+	private String descripcionServicios;
+	
 	@Column(name = "imagen_1", nullable = false)
 	private String imagen1;
 	
@@ -58,6 +61,10 @@ public class Habitacion {
 	private String imagen4;
 	
 	@ManyToOne
+	@JoinColumn(name = "universidad_id")
+	private Universidad universidad;
+	
+	@ManyToOne
 	@JoinColumn(name = "arrendador_id")
 	private Arrendador arrendador;
 	
@@ -65,9 +72,11 @@ public class Habitacion {
 	@JoinColumn(name = "distrito_id")
 	private Distrito distrito;
 	
+	
 	@ManyToOne
 	@JoinColumn(name = "tipo_inmueble_id")
 	private TipoInmueble tipoInmueble;
+	
 	
 	@OneToMany(mappedBy = "habitacion")
 	private List<HabitacionServicio> habitacionServicios;
@@ -200,6 +209,15 @@ public class Habitacion {
 		this.distrito = distrito;
 	}
 
+	public Universidad getUniversidad() {
+		return universidad;
+	}
+
+	public void setUniversidad(Universidad universidad) {
+		this.universidad = universidad;
+	}
+	
+	
 	public TipoInmueble getTipoInmueble() {
 		return tipoInmueble;
 	}
@@ -223,5 +241,15 @@ public class Habitacion {
 	public void setRentas(List<Renta> rentas) {
 		this.rentas = rentas;
 	}
+
+	public String getDescripcionServicios() {
+		return descripcionServicios;
+	}
+
+	public void setDescripcionServicios(String descripcionServicios) {
+		this.descripcionServicios = descripcionServicios;
+	}
+
+	
 	
 }

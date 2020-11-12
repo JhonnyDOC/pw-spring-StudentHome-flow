@@ -18,10 +18,12 @@ import pe.edu.upc.studenthome.models.entities.Arrendador;
 import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Habitacion;
 import pe.edu.upc.studenthome.models.entities.TipoInmueble;
+import pe.edu.upc.studenthome.models.entities.Universidad;
 import pe.edu.upc.studenthome.service.ArrendadorServices;
 import pe.edu.upc.studenthome.service.DistritoService;
 import pe.edu.upc.studenthome.service.HabitacionService;
 import pe.edu.upc.studenthome.service.TipoInmuebleService;
+import pe.edu.upc.studenthome.service.UniversidadService;
 
 @Controller
 @RequestMapping("/habitaciones")
@@ -39,6 +41,11 @@ public class HabitacionController {
 	
 	@Autowired
 	private HabitacionService habitacionService;
+	
+	@Autowired
+	private UniversidadService universidadService;
+	
+
 	
 	@GetMapping
 	public String inicio(Model model , String keyword) {
@@ -63,6 +70,10 @@ public class HabitacionController {
 			
 			List<TipoInmueble> tipoInmuebles = tipoInmuebleService.findAll();
 			model.addAttribute("tipoInmuebles", tipoInmuebles);
+			
+			List<Universidad> universidades = universidadService.findAll();
+			model.addAttribute("universidades", universidades);
+			
 			
 			model.addAttribute("habitaciones", habitaciones);
 			model.addAttribute("habitacion", habitacion);

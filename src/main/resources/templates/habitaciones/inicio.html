@@ -60,6 +60,7 @@
 	        <th scope="col">precio</th>
 	         <th scope="col">descripcion del inmueble</th>
 	          <th scope="col">descripcion del amueblado</th>
+	          <th scope="col">descripcion de servicios</th>
 	           <th scope="col">imagen 1</th>
 	            <th scope="col">imagen 2</th>
 	             <th scope="col">imagen 3</th>
@@ -67,6 +68,8 @@
 	        <th scope="col">arrendador</th>
 	          <th scope="col">distrito</th>
 	            <th scope="col">tipo de inmueble</th>
+	            <th scope="col">Universidad cercana </th>
+	           
 
 	            
 	    </tr>
@@ -90,6 +93,7 @@
 	       <td th:text="${habitacion.precio}"></td>
 	        <td th:text="${habitacion.descripcionInmueble}"></td>
 	         <td th:text="${habitacion.descripcionAmueblado}"></td>
+	         <td th:text="${habitacion.descripcionServicios}"></td>
 	         <td> <img th:src="${habitacion.imagen1}"></td>
 	         
 	         <td th:text="${habitacion.imagen2}"></td>
@@ -98,6 +102,8 @@
 	         <td th:text="${habitacion.arrendador.Persona.nombrePersona}"></td>
 	          <td th:text="${habitacion.distrito.nombreDistrito}"></td>
 	          <td th:text="${habitacion.tipoInmueble.nombreTipoInmueble}"></td>
+	          <td th:text="${habitacion.universidad.nombreUniversidad}"></td>
+	    
 	          
 	          <!--  
 	          <td > 
@@ -156,6 +162,9 @@
 	    <div class="col">
 	      <input type="text" class="form-control" th:field="*{descripcionAmueblado}" placeholder="descripcion Amueblado">
 	    </div>
+	    <div class="col">
+	      <input type="text" class="form-control" th:field="*{descripcionServicios}" placeholder="descripcion Amueblado">
+	    </div>
 	    </div>
 	    <div class="row">
 	     <div class="col">
@@ -182,6 +191,14 @@
 				th:field="*{tipoInmueble}" class="form-control-sm col-md-6" id="tipoInmueble">
 				<option th:each="tipoInmueble:${tipoInmuebles}" th:value="${tipoInmueble.id}"
 					th:text="${tipoInmueble.nombreTipoInmueble}" />
+			</select>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-md-3" for="universidad">Universidad:</label> <select
+				th:field="*{universidad}" class="form-control-sm col-md-6" id="universidad">
+				<option th:each="universidad:${universidades}" th:value="${universidad.id}"
+					th:text="${universidad.nombreUniversidad}" />
 			</select>
 		</div>
 	   
