@@ -16,8 +16,10 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import pe.edu.upc.studenthome.models.entities.Arrendador;
 import pe.edu.upc.studenthome.models.entities.Distrito;
+import pe.edu.upc.studenthome.models.entities.Habitacion;
 import pe.edu.upc.studenthome.service.ArrendadorServices;
 import pe.edu.upc.studenthome.service.DistritoService;
+import pe.edu.upc.studenthome.service.HabitacionService;
 
 @Controller
 @RequestMapping("/arrendadores")
@@ -30,22 +32,29 @@ public class ArrendadorController {
 	@Autowired
 	private DistritoService distritoServices;
 	
+	@Autowired
+	private HabitacionService habitacionService;
+	
 	@GetMapping
 	public String inicio(Model model) {
 		Arrendador arrendador = new Arrendador();
+		Habitacion habitacion = new Habitacion();
 		
 		try {
 			List<Arrendador> arrendadores = arrendadorService.findAll();
 			List<Distrito> distritos = distritoServices.findAll();
+			List<Habitacion>habitaciones = habitacionService.findAll();
 			model.addAttribute("arrendadores", arrendadores);
 			model.addAttribute("distritos", distritos);
 			model.addAttribute("arrendador", arrendador);
+			model.addAttribute("habitacion", habitacion);
+			model.addAttribute("habitaciones", habitaciones);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println();
 		}
-		return "/arrendadores/registro";
+		return "/arrendadores/perfilarrendador";
 	}
 
 	@PostMapping("save")
