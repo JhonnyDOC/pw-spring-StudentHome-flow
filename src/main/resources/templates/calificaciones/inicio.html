@@ -8,34 +8,14 @@
 <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
 <link rel="stylesheet" th:href="@{/css/market.css}">
-
+<link rel="stylesheet" th:href="@{/css/formulariostudenthome.css}">
 <title>Calificaciones</title>
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarNav" aria-controls="navbarNav"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Features</a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#"
-					tabindex="-1" aria-disabled="true">Disabled</a></li>
-			</ul>
-		</div>
-	</nav>
 
-
-	<h1>Registro Calificaciones</h1>
+<div class="formulario-studenthome-box">
+	<h2>Calificar arrendador</h2>
 
 	<table class="table table-striped">
 		<thead>
@@ -49,9 +29,7 @@
 			</tr>
 		</thead>
 
-
 		<tbody>
-
 
 			<tr th:each="calificacion : ${calificaciones}">
 
@@ -59,8 +37,7 @@
 				<td><a
 					th:href="@{'/calificaciones/view-' + ${calificacion.id}}"
 					th:text="${calificacion.id}">.</a></td>
-				<td th:text="${calificacion.anio}"></td>
-				<td th:text="${calificacion.mes}"></td>
+				<td th:text="${calificacion.fecha}"></td>
 				<td th:text="${calificacion.comentario}"></td>
 
 				<!--  
@@ -95,75 +72,96 @@
 	<form th:action="@{/calificaciones/save}" th:object="${calificacion}"
 		method="post">
 		<div class="row">
-			<!--  
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{anio}" placeholder="Año">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{mes}" placeholder="Mes">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{comentario}" placeholder="Comentario">
-	    </div>
-	    </div>
-	    -->
+		
 			<div class="card-body text-left">
 
-				<div class="form-group row col-md-6">
-					<label class="col-md-6" for="formGroupExampleInput">Fecha :</label>
-					<input type="date" class="form-control col-md-6"
-						id="formGroupExampleInput" th:field="*{anio}">
-				</div>
+
+			<div class ="user-box">
+				<input type="date" 
+						id="formGroupExampleInput" th:field="*{fecha}"/>
+				</input>
+					<label>
+					Fecha
+					</label>
+			</div>
 
 
-				<div class="form-group row col-md-6">
-					<label class="col-md-6" for="arrendador">Arrendador:</label> <select
-						th:field="*{arrendador}" class="form-control-sm col-md-6"
+				<div  class="user-box">
+				<select
+						th:field="*{arrendador}"
 						id="arrendador">
 						<option th:each="arrendador:${arrendadores}"
 							th:value="${arrendador.id}"
 							th:text="${arrendador.Persona.nombrePersona}" />
 					</select>
+					
+					<label>
+					Nombre arrendador
+					</label>
 				</div>
+					
+				
 
-				<div class="form-group row col-md-6">
-					<label class="col-md-6" for="estudiante">Estudiante:</label> <select
-						th:field="*{estudiante}" class="form-control-sm col-md-6"
+				<div  class="user-box">
+				<select
+						th:field="*{estudiante}"
 						id="estudiante">
 						<option th:each="estudiante:${estudiantes}"
 							th:value="${estudiante.id}"
 							th:text="${estudiante.Persona.nombrePersona}" />
 					</select>
+					
+					<label>
+					Nombre estudiante
+					</label>
+				
 				</div>
+					
+				
 
-				<div class="form-group row col-md-6">
-					<label class="col-md-6" for="formGroupExampleInput2">Comentario
-						:</label>
-					<textarea class="form-control col-md-6" id="formGroupExampleInput2"
-						th:field="*{comentario}" rows="5"
-						placeholder="Escribir Comentario"></textarea>
+				<div class="user-box">
+					<textarea  id="formGroupExampleInput2"
+						th:field="*{comentario}" rows="5">
+					</textarea>
+					
+					<label>
+					Descripcion calificacion
+					</label>
 				</div>
+				
+				
 
-				<div class="form-group row col-md-6">
-					<label class="col-md-6" for="puntaje">Puntaje:</label> <select
-						th:field="*{puntaje}" class="form-control-sm col-md-6"
+				<div class="user-box">
+				 <select
+						th:field="*{puntaje}" 
 						id="puntaje">
-						<option value="1">Bueno</option>
-						<option value="2">Medio</option>
-						<option value="3">Malo</option>
+						<option th:each="puntaje:${puntajes}"
+							th:value="${puntaje.id}"
+							th:text="${puntaje.nombrePuntaje}" />
 					</select>
+				<label>
+					Puntaje
+					</label>
 				</div>
-
+				 
+				
 
 			</div>
 		</div>
-		<div class="form-group col-md-6">
-			<button type="submit" class="btn btn-success">
-				<i class="fas fa-save"></i> Grabar
-			</button>
-		</div>
+	
+	<div class= "center-button">
+			<button  type= "submit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Grabar
+    </button>
+	</div>
+	
+	
 	</form>
-
+</div>
 
 	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 	<script th:src="@{/js/bootstrap..min.js}"></script>
