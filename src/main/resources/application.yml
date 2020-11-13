@@ -2,9 +2,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/StudentHomedb
+    url: jdbc:postgresql://localhost:5432/studenHome_db
     username: postgres
-    password: postgres
+    password: 12Enero2000*
   jpa:
     database: postgresql
     hibernate:
@@ -16,4 +16,4 @@ spring:
         jdbc.lob.non_contextual_creation: true
 
 server:
-  port: 8096
+  port: 8088

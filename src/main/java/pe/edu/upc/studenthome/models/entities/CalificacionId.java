@@ -7,19 +7,18 @@ public class CalificacionId implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Long arrendador;
 	private Long estudiante;
-	private String anio;
-	private String mes;
+	private String fecha;
 	
 	public CalificacionId() {
 		
 	}
 	public CalificacionId(Long arrendador, Long estudiante, 
-			String anio, String mes) {
+			String fecha) {
 		super();
 		this.arrendador = arrendador;
 		this.estudiante = estudiante;
-		this.anio = anio;
-		this.mes = mes;
+		this.fecha = fecha;
+	
 	}
 	public Long getArrendador() {
 		return arrendador;
@@ -34,18 +33,13 @@ public class CalificacionId implements Serializable{
 		this.estudiante = estudiante;
 	}
 	
-	public String getAnio() {
-		return anio;
+	public String getFecha() {
+		return fecha;
 	}
-	public void setAnio(String anio) {
-		this.anio = anio;
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
-	public String getMes() {
-		return mes;
-	}
-	public void setMes(String mes) {
-		this.mes = mes;
-	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(arrendador, estudiante);
@@ -58,7 +52,7 @@ public class CalificacionId implements Serializable{
         	return false;
         CalificacionId calificacionId = (CalificacionId) obj;
         if (this.arrendador != calificacionId.arrendador ||
-        	this.anio != calificacionId.anio || this.mes != calificacionId.mes) 
+        	this.fecha != calificacionId.fecha) 
         	return false;
         return this.estudiante == calificacionId.estudiante;
 	}
