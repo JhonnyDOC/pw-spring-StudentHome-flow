@@ -33,12 +33,25 @@ public class Habitacion {
 	@Column(name = "direccion", length = 50, nullable = false)
 	private String direccion;
 	
+	
 	@Column(name = "metros_cuadrados", nullable = false)
 	private Integer metrosCuadrados;
 	
 	@Column(name = "precio", nullable = false)
 	private Float precio;
 	
+	@Column(name = "roomate", nullable =false)
+	private Boolean roomate;
+	
+	
+	public Boolean getRoomate() {
+		return roomate;
+	}
+
+	public void setRoomate(Boolean roomate) {
+		this.roomate = roomate;
+	}
+
 	@Column(name = "descripcion_inmueble", length = 150, nullable = false)
 	private String descripcionInmueble;
 	
