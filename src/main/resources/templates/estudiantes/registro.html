@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -10,11 +11,12 @@
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/layout.css}">
 
 <title>Estudiantes</title>
 </head>
 <body>
-
+<header th:replace="layout :: header"></header>
 	<main role="main ">
 		<section class="container pt-3">
 
@@ -188,6 +190,7 @@
 	<script th:src="@{js/bootstrap.min.js}"></script>
 
 
+<!-- 
 	<table class="table table-striped ">
 		<thead class="thead-dark ">
 			<tr>
@@ -220,8 +223,8 @@
 
 		</tbody>
 	</table>
+	 -->
 
-
-
+<footer th:replace="layout :: footer"></footer>
 </body>
 </html>
