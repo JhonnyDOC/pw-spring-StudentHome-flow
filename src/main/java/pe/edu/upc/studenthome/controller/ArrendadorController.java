@@ -35,6 +35,31 @@ public class ArrendadorController {
 	@Autowired
 	private HabitacionService habitacionService;
 	
+	@GetMapping ("/registro")
+	public String registro(Model model) {
+		Arrendador arrendador = new Arrendador();
+		Habitacion habitacion = new Habitacion();
+		
+		try {
+			List<Arrendador> arrendadores = arrendadorService.findAll();
+			List<Distrito> distritos = distritoServices.findAll();
+			List<Habitacion>habitaciones = habitacionService.findAll();
+			model.addAttribute("arrendadores", arrendadores);
+			model.addAttribute("distritos", distritos);
+			model.addAttribute("arrendador", arrendador);
+			model.addAttribute("habitacion", habitacion);
+			model.addAttribute("habitaciones", habitaciones);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println();
+		}
+		return "/arrendadores/registro";
+		
+		
+		
+	}
+	
 	@GetMapping
 	public String inicio(Model model) {
 		Arrendador arrendador = new Arrendador();
@@ -55,6 +80,9 @@ public class ArrendadorController {
 			System.out.println();
 		}
 		return "/arrendadores/perfilarrendador";
+		
+		
+		
 	}
 
 	@PostMapping("save")

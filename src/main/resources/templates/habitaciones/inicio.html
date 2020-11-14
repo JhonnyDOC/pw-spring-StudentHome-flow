@@ -1,4 +1,6 @@
 <!doctype html>
+
+
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <link rel="stylesheet" th:href="@{/css/studenthome.css}">
@@ -7,17 +9,15 @@
 
 <header th:replace="layout :: header"></header>
 	<div class="row">
-		<div class="col">
-			<form th:action="@{/habitaciones}" method="get">
-				<input type="text" id="habitacionSearch" name="keyword"
-					placeholder="Buscar por distrito">
-				<button type="submit" class="btn btn-success">
-					<i class="fas fa-find"></i> Buscar
-				</button>
-			</form>
+	    <div class="col">
+	    <form th:action="@{/habitaciones}" method="get">
+	      <input type="text" id="habitacionSearch" name="keyword"  placeholder="Buscar por distrito">
+	      <button type="submit" class="btn btn-success"><i class="fas fa-find"></i> Buscar</button>
+	      </form>
+	  
+	    </div>
+	    </div>
 
-		</div>
-	</div>
 
 	<h1>Habitaciones</h1>
 
