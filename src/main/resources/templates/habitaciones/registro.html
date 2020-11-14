@@ -117,7 +117,7 @@
 									 <select
 										th:field="*{arrendador}"
 										id="arrendador">
-										<option th:each="arrendador:${arrendadores}"
+										<option th:each="arrendador:${arrendadores}" style="background-color: skyblue;"
 											th:value="${arrendador.id}"
 											th:text="${arrendador.Persona.nombrePersona}" />
 									</select>
@@ -128,7 +128,7 @@
 									<select
 										th:field="*{distrito}"
 										id="distrito">
-										<option th:each="distrito:${distritos}"
+										<option th:each="distrito:${distritos}" style="background-color: skyblue;"
 											th:value="${distrito.id}"
 											th:text="${distrito.nombreDistrito}" />
 									</select>
@@ -156,7 +156,7 @@
 									
 									<select th:field="*{tipoInmueble}"
 										 id="tipoInmueble">
-										<option th:each="tipoInmueble:${tipoInmuebles}"
+										<option th:each="tipoInmueble:${tipoInmuebles}" style="background-color: skyblue;"
 											th:value="${tipoInmueble.id}"
 											th:text="${tipoInmueble.nombreTipoInmueble}" />
 									</select>
@@ -167,7 +167,7 @@
 									
 									<select th:field="*{universidad}"
 										 id="universidad">
-										<option th:each="universidad:${universidades}"
+										<option th:each="universidad:${universidades}" style="background-color: skyblue;"
 											th:value="${universidad.id}"
 											th:text="${universidad.nombreUniversidad}" />
 									</select>

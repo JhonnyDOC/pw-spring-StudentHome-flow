@@ -90,7 +90,7 @@
 				<select
 						th:field="*{arrendador}"
 						id="arrendador">
-						<option th:each="arrendador:${arrendadores}"
+						<option th:each="arrendador:${arrendadores}" style="background-color: skyblue;"
 							th:value="${arrendador.id}"
 							th:text="${arrendador.Persona.nombrePersona}" />
 					</select>
@@ -106,7 +106,7 @@
 				<select
 						th:field="*{estudiante}"
 						id="estudiante">
-						<option th:each="estudiante:${estudiantes}"
+						<option th:each="estudiante:${estudiantes}" style="background-color: skyblue;"
 							th:value="${estudiante.id}"
 							th:text="${estudiante.Persona.nombrePersona}" />
 					</select>
@@ -135,7 +135,7 @@
 				 <select
 						th:field="*{puntaje}" 
 						id="puntaje">
-						<option th:each="puntaje:${puntajes}"
+						<option th:each="puntaje:${puntajes}" style="background-color: skyblue;"
 							th:value="${puntaje.id}"
 							th:text="${puntaje.nombrePuntaje}" />
 					</select>
