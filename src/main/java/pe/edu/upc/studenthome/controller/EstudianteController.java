@@ -38,7 +38,7 @@ public class EstudianteController {
 			e.printStackTrace();
 			System.out.println();
 		}
-		return "/estudiantes/registro";
+		return "/estudiantes/perfilestudiante";
 	}
 	
 	@PostMapping("save")
