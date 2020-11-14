@@ -57,7 +57,7 @@ public class EstudianteController {
 	@PostMapping("cancel")
 	public String cancel() {
 		
-		return "redirect:/login";
+		return "/";
 	}
 	
 	@GetMapping("view-{id}")
