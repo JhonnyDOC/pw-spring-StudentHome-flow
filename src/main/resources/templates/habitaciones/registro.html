@@ -10,97 +10,132 @@
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/formulario2studenthome.css}">
 
-<title>Estudiantes</title>
+<title>Registro habitaciones</title>
 </head>
 <body>
 
-
+<div class="formulario-studenthome-box-habitacion">
 	
-	<main role="main ">
-		<section class="container pt-3">
-			<div class="card text-center">
-
-
-
+	<h2>Registrar habitacion</h2>
+	
 				<form th:action="@{/habitaciones/save}" th:object="${habitacion}"
 					method="post">
-					<div class="card-header">Registro de Habitacion</div>
+				<div class="row">
 					<div class="card-body text-left">
-						<div class="form-row">
-							<div class="col">
-								<input type="text" class="form-control"
+						
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control"
 									th:field="*{numeroViviendaExterno}"
-									placeholder="Numero Vivienda Externo">
+									>
+									
+									<label>
+										Numero Vivienda Externo
+									</label>
 							</div>
-							<div class="col">
-								<input type="text" class="form-control"
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control"
 									th:field="*{numeroViviendaInterno}"
-									placeholder="numero Vivienda Interno">
+									>
+									
+									<label>
+										Numero Vivienda Interno
+									</label>
 							</div>
-							<div class="col">
-								<input type="text" class="form-control"
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control"
 									th:field="*{numeroHabitaciones}"
-									placeholder="numero Habitaciones">
+									>
+									<label>
+										Numero Habitaciones
+									</label>
 							</div>
-							<div class="col">
-								<input type="text" class="form-control" th:field="*{direccion}"
-									placeholder="direccion">
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control" th:field="*{direccion}"
+									>
+									
+									<label>
+										Direccion
+									</label>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<input type="text" class="form-control"
-									th:field="*{metrosCuadrados}" placeholder="metros cuadrados">
+						
+						
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control"
+									th:field="*{metrosCuadrados}" >
+									
+									<label>
+										Metros Cuadrados
+									</label>
 							</div>
-							<div class="col">
-								<input type="text" class="form-control" th:field="*{precio}"
-									placeholder="precio">
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control" th:field="*{precio}"
+									>
+									<label>
+										Precio
+									</label>
 							</div>
-							<div class="col">
-								<input type="text" class="form-control"
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control"
 									th:field="*{descripcionInmueble}"
-									placeholder="descripcion Inmueble">
+									>
+									<label>
+										Descripción inmueble
+									</label>
 							</div>
-							<div class="col">
-								<input type="text" class="form-control"
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control"
 									th:field="*{descripcionAmueblado}"
-									placeholder="descripcion Amueblado">
+								>
+									
+									<label>
+										Descripción amueblado
+									</label>
 							</div>
-							<div class="col">
-								<input type="text" class="form-control"
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control"
 									th:field="*{descripcionServicios}"
-									placeholder="descripcion Servicios">
+									>
+									<label>
+										Descripción servicios
+									</label>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<input type="text" class="form-control" th:field="*{imagen1}"
-									placeholder="imagen 1">
+						
+						
+							<div class="user-box">
+								<input autocomplete="off" type="text" class="form-control" th:field="*{imagen1}"
+									>
+									<label>
+										Imagen
+									</label>
+							</div>
 
 
-
-								<div class="form-group row">
-									<label class="col-md-3" for="arrendador">Arrendador:</label> <select
-										th:field="*{arrendador}" class="form-control-sm col-md-6"
+								<div class="user-box">
+									 <select
+										th:field="*{arrendador}"
 										id="arrendador">
 										<option th:each="arrendador:${arrendadores}"
 											th:value="${arrendador.id}"
 											th:text="${arrendador.Persona.nombrePersona}" />
 									</select>
+									<label class="col-md-3" for="arrendador">Arrendador:</label>
 								</div>
 
-								<div class="form-group row">
-									<label class="col-md-3" for="distrito">Distrito:</label> <select
-										th:field="*{distrito}" class="form-control-sm col-md-6"
+								<div class="user-box">
+									<select
+										th:field="*{distrito}"
 										id="distrito">
 										<option th:each="distrito:${distritos}"
 											th:value="${distrito.id}"
 											th:text="${distrito.nombreDistrito}" />
 									</select>
+									<label class="col-md-3" for="distrito">Distrito:</label> 
 								</div>
-								<div class="form-group col-md-2">
-									<label for="formGroupExampleInput">¿Admitir roomate? :</label>
+								
+								<div class="form-group ">
+									<label for="formGroupExampleInput">¿Admitir roomate? : </label>
 
 									<div class="form-check form-check-inline">
 										<input class="form-check-input" type="radio"
@@ -116,43 +151,48 @@
 									</div>
 								</div>
 
-								<div class="form-group row">
-									<label class="col-md-3" for="tipoInmueble">TipoInmueble:</label>
+								<div class="user-box">
+									
 									<select th:field="*{tipoInmueble}"
-										class="form-control-sm col-md-6" id="tipoInmueble">
+										 id="tipoInmueble">
 										<option th:each="tipoInmueble:${tipoInmuebles}"
 											th:value="${tipoInmueble.id}"
 											th:text="${tipoInmueble.nombreTipoInmueble}" />
 									</select>
+									<label class="col-md-3" for="tipoInmueble">TipoInmueble:</label>
 								</div>
 
-								<div class="form-group row">
-									<label class="col-md-3" for="universidad">Universidad:</label>
+								<div class="user-box">
+									
 									<select th:field="*{universidad}"
-										class="form-control-sm col-md-6" id="universidad">
+										 id="universidad">
 										<option th:each="universidad:${universidades}"
 											th:value="${universidad.id}"
 											th:text="${universidad.nombreUniversidad}" />
 									</select>
+									<label class="col-md-3" for="universidad">Universidad:</label>
 								</div>
 
-							</div>
-						</div>
+							
+						
 					</div>
+</div>
+					<div class="center-button">
 
-
-					<button type="submit" class="btn btn-success">
-						<i class="fas fa-save"></i> Grabar
+					<button type="submit" >
+						  <span></span>
+      				<span></span>
+     			    <span></span>
+      			    <span></span>
+    			  Grabar
 					</button>
+					</div>
 				</form>
 
-			</div>
-		</section>
-	</main>
+	
 
 
-
-
+</div>
 
 	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 	<script th:src="@{/js/bootstrap..min.js}"></script>
