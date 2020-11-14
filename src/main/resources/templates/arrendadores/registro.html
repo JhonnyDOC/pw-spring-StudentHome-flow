@@ -11,13 +11,13 @@
 <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
 <link rel="stylesheet" th:href="@{/css/market.css}">
-<link rel="stylesheet" th:href="@{/css/formulariostudenthome.css}">
+<link rel="stylesheet" th:href="@{/css/formulario3studenthome.css}">
 
 <title>Arrendadores</title>
 </head>
 <body>
 
-	<div class="formulario-studenthome-box">
+	<div class="formulario-studenthome-box-arrendador">
 	<h2> Registrar arrendador</h2>
 	
 
@@ -62,13 +62,13 @@
 					
 							<div class="user-box">
 								<select
-									th:field="*{distrito}" class="form-control-sm col-md-6"
+									th:field="*{distrito}" class="form-control"
 									id="distrito">
-									<option th:each="distrito:${distritos}"
+									<option th:each="distrito:${distritos}" style="background-color: skyblue;"
 										th:value="${distrito.id}" th:text="${distrito.nombreDistrito}" />
 								
 								</select>
-							<label>Distrito: </label> 
+							<label class="col-md-3" for="distrito"> Distrito: </label> 
                        </div>
 							<div class="user-box">
 								 <input autocomplete="off"
