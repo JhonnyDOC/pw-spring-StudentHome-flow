@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import pe.edu.upc.studenthome.models.entities.Arrendador;
+import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Estudiante;
+import pe.edu.upc.studenthome.models.entities.Habitacion;
 import pe.edu.upc.studenthome.service.EstudianteService;
 
 @Controller
@@ -39,6 +42,22 @@ public class EstudianteController {
 			System.out.println();
 		}
 		return "/estudiantes/perfilestudiante";
+	}
+	
+	@GetMapping("registro")
+	public String Registro(Model model) {
+		Estudiante estudiante = new Estudiante();
+		
+		try {
+			List<Estudiante> estudiantes = estudianteService.findAll();
+			model.addAttribute("estudiantes", estudiantes);
+			model.addAttribute("estudiante", estudiante);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println();
+		}
+		return "/estudiantes/registro";
 	}
 	
 	@PostMapping("save")
