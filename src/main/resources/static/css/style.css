@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #4d4d4d;
-  background: #fff;
+  background: #F0FFF0
 }
 
 #page {
@@ -31,6 +31,7 @@ body {
 .offcanvas #page {
   overflow: hidden;
   position: absolute;
+  
 }
 .offcanvas #page:after {
   -webkit-transition: 2s;
@@ -47,13 +48,13 @@ body {
 }
 
 a {
-  color: #FF9000;
+  color: 	#87CEFA;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #FF9000;
+  color: 	#87CEFA;
   outline: none;
   text-decoration: none;
 }
@@ -71,17 +72,17 @@ h1, h2, h3, h4, h5, h6, figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #FF9000;
+  background: 	#87CEFA;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #FF9000;
+  background: 	#87CEFA;
 }
 
 ::selection {
   color: #fff;
-  background: #FF9000;
+  background: 	#87CEFA;
 }
 
 #fh5co-header,
@@ -101,6 +102,7 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 0;
   right: 0;
   background: rgba(255, 144, 0, 0.9);
+  background: 	#87CEFA;
 }
 #fh5co-header .display-t,
 .fh5co-cover .display-t {
@@ -222,7 +224,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-features {
-  background: #FF9000;
+  background: 	#87CEFA;
 }
 #fh5co-features h2 {
   color: #fff;
@@ -257,7 +259,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: table-cell;
   vertical-align: middle;
   height: 100px;
-  color: #FF9000 !important;
+  color: 	#87CEFA !important;
 }
 #fh5co-features .feature-left .feature-copy {
   width: 100%;
@@ -308,10 +310,11 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-bg-dark {
   background: #2F3C4F;
-  background: #FF9000;
+  background: #87CEFA;
 }
 .fh5co-bg-dark .fh5co-heading h2 {
   color: #fff !important;
+  
 }
 
 .info {
@@ -402,11 +405,12 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 20px;
 }
 #fh5co-about .fh5co-social-icons li a:hover {
-  background: #FF9000;
+  background:#87CEFA;
 }
 
 .fh5co-heading {
   margin-bottom: 5em;
+  
 }
 .fh5co-heading.fh5co-heading-sm {
   margin-bottom: 2em;
@@ -532,7 +536,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 40px;
   left: 50%;
   margin-left: -21px;
-  background-color: #FF9000;
+  background-color: #87CEFA;
   z-index: 100;
   display: table;
   -webkit-border-radius: 50%;
@@ -789,6 +793,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-started .fh5co-heading {
   margin-bottom: 0;
+  
 }
 #fh5co-started .fh5co-heading h2 {
   color: #fff;
@@ -801,7 +806,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 54px;
   border: none !important;
   background: #fff;
-  color: #FF9000;
+  color: #87CEFA; 
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 400;
@@ -1288,6 +1293,7 @@ input[type="text"] {
 
 .js .animate-box {
   opacity: 0;
+    
 }
 
 /*# sourceMappingURL=style.css.map */
