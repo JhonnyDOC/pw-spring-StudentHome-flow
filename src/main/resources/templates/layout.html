@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/layout.css}">
+
+<title></title>
+</head>
+<body class="fixed-sn light-blue-skin">
+	<div>
+		<!--Main Navigation-->
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div class="container">
+					<a class="navbar-brand" href="#">StudentHome</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<!-- col-auto- START -->
+					<div class="col-auto">
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item active"><a class="nav-link" href="#">Inicio
+										<span class="sr-only">(current)</span>
+								</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Alquilar
+										<span class="sr-only">(current)</span>
+								</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+								<li class="nav-item dropdown"><a
+									class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+									role="button" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false"> Registro </a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="#">Estudiante</a> <a
+											class="dropdown-item" href="arrendadores/registro">Arrendador</a>
+									</div></li>
+								<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+							</ul>
+
+						</div>
+					</div>
+					<!-- col-auto- END -->
+				</div>
+			</nav>
+
+		</header>
+		<!--Main Navigation-->
+	</div>
+
+
+
+	<footer th:fragment="footer">
+		<!--Footer Links-->
+		<div class="container mt-5 mb-4 text-center text-md-left">
+			<div class="row mt-3">
+
+				<!--First column-->
+				<div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+					<h6 class="text-uppercase font-weight-bold">
+						<strong>Teen Technology</strong>
+					</h6>
+					<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+						style="width: 60px;">
+					<p>Empresa que se dedica a dar soluciones a problemas juveniles en base
+					   a la tecnoloía </p>
+				</div>
+				<!--/.First column-->
+
+				<!--Second column-->
+				<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+					<h6 class="text-uppercase font-weight-bold">
+						<strong>Productos</strong>
+					</h6>
+					<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+						style="width: 60px;">
+					<p>
+						<a href="#!">Student Home</a>
+					</p>
+				</div>
+				<!--/.Second column-->
+
+
+				<!--Fourth column-->
+				<div class="col-md-4 col-lg-3 col-xl-3">
+					<h6 class="text-uppercase font-weight-bold">
+						<strong>Contacto</strong>
+					</h6>
+					<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+						style="width: 60px;">
+					<p>
+						<i class="fas fa-home"></i></i> San Isidro
+					</p>
+					<p>
+						<i class="fa fa-envelope mr-3"></i> renzo_guitar@outlook.com
+					</p>
+					<p>
+						<i class="fa fa-phone mr-3"></i> + 01 998 975 786
+					</p>
+				</div>
+				<!--/.Fourth column-->
+
+			</div>
+		</div>
+		<!--/.Footer Links-->
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">
+			© 2018 Copyright: <a
+				href="https://mdbootstrap.com/bootstrap-tutorial/">
+				StudentHome.com</a>
+		</div>
+		<!-- Copyright -->
+
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/chosen.jquery.min.js}"></script>
+		<script th:src="@{/js/fontawesome.min.js}"></script>
+		<script th:src="@{/js/sweetalert.min.js}"></script>
+	</footer>
+
+</body>
+</html>

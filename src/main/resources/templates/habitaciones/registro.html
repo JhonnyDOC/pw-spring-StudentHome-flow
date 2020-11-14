@@ -16,165 +16,146 @@
 <body>
 
 
-	<form th:action="@{/estudiantes/save}" th:object="${estudiante}" method="post">
-		<main role="main ">
-			<section class="container pt-3" > 
-			
-				<div class="card text-center">
-					<div class="card-header" >Registro de Estudiante</div>
+	
+	<main role="main ">
+		<section class="container pt-3">
+			<div class="card text-center">
+
+
+
+				<form th:action="@{/habitaciones/save}" th:object="${habitacion}"
+					method="post">
+					<div class="card-header">Registro de Habitacion</div>
 					<div class="card-body text-left">
 						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput">Nombres :</label> <input
-									type="text" class="form-control" id="formGroupExampleInput" th:field="*{persona.nombrePersona}"
-									placeholder="Nombres">
+							<div class="col">
+								<input type="text" class="form-control"
+									th:field="*{numeroViviendaExterno}"
+									placeholder="Numero Vivienda Externo">
 							</div>
-
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">Apellidos :</label> <input
-									type="text" class="form-control" id="formGroupExampleInput2" th:field="*{persona.apellidoPersona}"
-									placeholder="Apellidos">
+							<div class="col">
+								<input type="text" class="form-control"
+									th:field="*{numeroViviendaInterno}"
+									placeholder="numero Vivienda Interno">
 							</div>
-						</div>
-						
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput">Nombre de Usuario :</label> <input
-									type="text" class="form-control" id="formGroupExampleInput" th:field="*{usuarioEstudiante}"
-									placeholder="Nombre de usuario">
+							<div class="col">
+								<input type="text" class="form-control"
+									th:field="*{numeroHabitaciones}"
+									placeholder="numero Habitaciones">
 							</div>
-
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">Contraseña :</label> <input
-									type="text" class="form-control" id="formGroupExampleInput2" th:field="*{contrasenaEstudiante}"
-									placeholder="Contraseña">
+							<div class="col">
+								<input type="text" class="form-control" th:field="*{direccion}"
+									placeholder="direccion">
 							</div>
 						</div>
-
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="descripcionUniv">Universidad</label> <select 
-								th:field="*{descripcionUniv}" class="form-control">
-									<option value="">Seleccione la universidad</option>
-									<option value=" Universidad Nacional del Callao (UNAC)"> Universidad Nacional del Callao (UNAC)</option>
-									<option value=" Universidad Nacional Mayor de San Marcos (UNMSM)"> Universidad Nacional Mayor de San Marcos (UNMSM)</option>
-									<option value=" Universidad José Faustino Sánchez Carrión (UNJFSC)"> Universidad José Faustino Sánchez Carrión (UNJFSC)</option>
-									<option value=" Universidad Nacional Agraria La Molina"> Universidad Nacional Agraria La Molina</option>
-									<option value=" Universidad Nacional de Educación E. Guzmán y Valle (UNE)"> Universidad Nacional de Educación E. Guzmán y Valle (UNE)</option>
-									<option value=" Universidad Nacional de Ingeniería (UNI)"> Universidad Nacional de Ingeniería (UNI)</option>
-									<option value=" Universidad Nacional Federico Villarreal (UNFV)"> Universidad Nacional Federico Villarreal (UNFV)</option>
-									<option value=" Universidad Privada San Juan Bautista (UPSJB)"> Universidad Privada San Juan Bautista (UPSJB)</option>
-									<option value=" Universidad Inca Garcilaso de la Vega (UIGV)"> Universidad Inca Garcilaso de la Vega (UIGV)</option>
-									<option value=" Universidad Peruana de Las Américas"> Universidad Peruana de Las Américas</option>
-									<option value=" Universidad Tecnológica del Perú (UTP) "> Universidad Tecnológica del Perú (UTP) </option>
-									<option value=" Universidad del Pacifico (UP)"> Universidad del Pacifico (UP)</option>
-									<option value=" Universidad Peruana de Ciencias e Informática (UPCI)"> Universidad Peruana de Ciencias e Informática (UPCI)</option>
-									<option value=" Universidad Femenina del Sagrado Corazón (UNIFE)">Universidad Femenina del Sagrado Corazón (UNIFE)</option>
-									<option value=" Universidad San Ignacio de Loyola (USIL)"> Universidad San Ignacio de Loyola (USIL)</option>
-									<option value=" Universidad Peruana de Ciencias Aplicadas (UPC)">Universidad Peruana de Ciencias Aplicadas (UPC)</option>
-									<option value=" Universidad Ricardo Palma (URP)">Universidad Ricardo Palma (URP)</option>
-									<option value=" Universidad Marcelino Champagnat (UMCH)">Universidad Marcelino Champagnat (UMCH)</option>
-									<option value=" Universidad de Lima (ULIMA) ">Universidad de Lima (ULIMA) </option>
-									<option value=" Universidad de San Martín de Porres (USMP)">Universidad de San Martín de Porres (USMP)</option>
-									<option value=" Pontificia Universidad Católica del Perú (PUCP)">Pontificia Universidad Católica del Perú (PUCP)</option>
-									<option value=" Universidad Peruana Cayetano Heredia (UPCH)">Universidad Peruana Cayetano Heredia (UPCH)</option>
-									<option value=" Universidad de Piura (PAD)">Universidad de Piura (PAD)</option>
-									<option value=" Universidad Antonio Ruiz de Montoya (UARM) ">Universidad Antonio Ruiz de Montoya (UARM) </option>
-									<option value=" Universidad Científica del Sur (UCSUR)">Universidad Científica del Sur (UCSUR)</option>
-									<option value=" Universidad Privada del Norte (UPNORTE)">Universidad Privada del Norte (UPNORTE)</option>
-									<option value=" Universidad Cesar Vallejo (UCV)">Universidad Cesar Vallejo (UCV)</option>
-									<option value=" Universidad Alas Peruanas (UAP)">Universidad Alas Peruanas (UAP)</option>
-									
-								</select>
-
+						<div class="row">
+							<div class="col">
+								<input type="text" class="form-control"
+									th:field="*{metrosCuadrados}" placeholder="metros cuadrados">
 							</div>
+							<div class="col">
+								<input type="text" class="form-control" th:field="*{precio}"
+									placeholder="precio">
+							</div>
+							<div class="col">
+								<input type="text" class="form-control"
+									th:field="*{descripcionInmueble}"
+									placeholder="descripcion Inmueble">
+							</div>
+							<div class="col">
+								<input type="text" class="form-control"
+									th:field="*{descripcionAmueblado}"
+									placeholder="descripcion Amueblado">
+							</div>
+							<div class="col">
+								<input type="text" class="form-control"
+									th:field="*{descripcionServicios}"
+									placeholder="descripcion Servicios">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<input type="text" class="form-control" th:field="*{imagen1}"
+									placeholder="imagen 1">
 
-							<div class="form-group col-md-2">
-								<label for="formGroupExampleInput">¿Hacer Roomate? :</label>
 
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" th:field="*{roomate}"
-										name="inlineRadioOptions" id="inlineRadio1" value="Si">
-									<label class="form-check-label" for="inlineRadio1">Si</label>
+
+								<div class="form-group row">
+									<label class="col-md-3" for="arrendador">Arrendador:</label> <select
+										th:field="*{arrendador}" class="form-control-sm col-md-6"
+										id="arrendador">
+										<option th:each="arrendador:${arrendadores}"
+											th:value="${arrendador.id}"
+											th:text="${arrendador.Persona.nombrePersona}" />
+									</select>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" th:field="*{roomate}"
-										name="inlineRadioOptions" id="inlineRadio2" value="No">
-									<label class="form-check-label" for="inlineRadio2">No</label>
+
+								<div class="form-group row">
+									<label class="col-md-3" for="distrito">Distrito:</label> <select
+										th:field="*{distrito}" class="form-control-sm col-md-6"
+										id="distrito">
+										<option th:each="distrito:${distritos}"
+											th:value="${distrito.id}"
+											th:text="${distrito.nombreDistrito}" />
+									</select>
 								</div>
+								<div class="form-group col-md-2">
+									<label for="formGroupExampleInput">¿Admitir roomate? :</label>
+
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio"
+											th:field="*{roomate}" name="inlineRadioOptions"
+											id="inlineRadio1" value="1"> <label
+											class="form-check-label" for="inlineRadio1">Si</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio"
+											th:field="*{roomate}" name="inlineRadioOptions"
+											id="inlineRadio2" value="0"> <label
+											class="form-check-label" for="inlineRadio2">No</label>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-md-3" for="tipoInmueble">TipoInmueble:</label>
+									<select th:field="*{tipoInmueble}"
+										class="form-control-sm col-md-6" id="tipoInmueble">
+										<option th:each="tipoInmueble:${tipoInmuebles}"
+											th:value="${tipoInmueble.id}"
+											th:text="${tipoInmueble.nombreTipoInmueble}" />
+									</select>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-md-3" for="universidad">Universidad:</label>
+									<select th:field="*{universidad}"
+										class="form-control-sm col-md-6" id="universidad">
+										<option th:each="universidad:${universidades}"
+											th:value="${universidad.id}"
+											th:text="${universidad.nombreUniversidad}" />
+									</select>
+								</div>
+
 							</div>
 						</div>
-
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">DNI :</label> <input
-									type="text" class="form-control" id="formGroupExampleInput3" th:field="*{persona.dni}"
-									placeholder="DNI">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">Teléfono :</label> <input
-									type="text" class="form-control" id="formGroupExampleInput4" th:field="*{persona.numeroTelefono}"
-									placeholder="Teléfono">
-							</div>
-						</div>
-						<div class="form-group col-md-13">
-							<label for="formGroupExampleInput2">Dirección :</label> <input
-								type="text" class="form-control" id="formGroupExampleInput5" th:field="*{persona.direccion}"
-								placeholder="Dirección">
-						</div>
-
-
-						<div class="card text-center ">
-							<button type="submit" class="btn btn-info">
-								<i class="fas fa-save"></i> Grabar
-							</button>
-						</div>
-
 					</div>
-					<div class="card-footer text-center"></div>
-				</div>
 
-			</section>
-		</main>
-	</form>
-	<script th:src="@{js/jquery-3.4.1.min.js}"></script>
-	<script th:src="@{js/bootstrap.min.js}"></script>
-	
-	
-	<table class="table table-striped ">
-		<thead class="thead-dark ">
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Nombres</th>
-				<th scope="col">Apellidos</th>
-				<th scope="col">Usuario</th>
-				<th scope="col">Contraseña</th>
-				<th scope="col">Universidad</th>
-				<th scope="col">Roomate</th>
-				<th scope="col">DNI</th>
-				<th scope="col">Teléfono</th>
-				<th scope="col">Dirección</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="estudiante : ${estudiantes}">
-				<th th:text="${estudiante.id}" scope="row">.</th>
-				<td th:text="${estudiante.persona.nombrePersona}">.</td>
-				<td th:text="${estudiante.persona.apellidoPersona}">.</td>
-				<td th:text="${estudiante.usuarioEstudiante}">.</td>
-				<td th:text="${estudiante.contrasenaEstudiante}">.</td>
-				<td th:text="${estudiante.descripcionUniv}">.</td>
-				<td th:text="${estudiante.roomate}">.</td>
-				<td th:text="${estudiante.persona.dni}">.</td>
-				<td th:text="${estudiante.persona.numeroTelefono}">.</td>
-				<td th:text="${estudiante.persona.direccion}">.</td>
-				<td></td>
-			</tr>
 
-		</tbody>
-	</table>
-	
-	
+					<button type="submit" class="btn btn-success">
+						<i class="fas fa-save"></i> Grabar
+					</button>
+				</form>
+
+			</div>
+		</section>
+	</main>
+
+
+
+
+
+	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap..min.js}"></script>
 	
 </body>
 </html>
