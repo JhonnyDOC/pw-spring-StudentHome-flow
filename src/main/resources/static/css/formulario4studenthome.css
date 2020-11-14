@@ -1,7 +1,6 @@
 @charset "ISO-8859-1";
-@charset "ISO-8859-1";
 html {
-  height: 150%;
+  height: 100%;
 }
 body {
   margin:0;
@@ -10,11 +9,11 @@ body {
   background: linear-gradient(#15ECE0, #039EF3);
 }
 
-.formulario-studenthome-box-arrendador {
+.formulario-studenthome-box-estudiante {
   position: absolute;
-  top: 80%;
+  top: 54%;
   left: 50%;
-  width: 600px;
+  width: 950px;
   padding: 50px;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.5);
@@ -23,8 +22,8 @@ body {
   border-radius: 10px;
 }
 
-.formulario-studenthome-box-arrendador h2 {
-  margin: 0 0 15px;
+.formulario-studenthome-box-estudiante h2 {
+  margin: 0 0 65px;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -32,13 +31,13 @@ body {
   
 }
 
-.formulario-studenthome-box-arrendador .user-box {
+.formulario-studenthome-box-estudiante .user-box {
   position: relative;
 }
 
-.formulario-studenthome-box-arrendador .user-box select {
-  width: 100%;
-  padding: 5px 0;
+.formulario-studenthome-box-estudiante .user-box select {
+  width: 96%;
+  padding: 10px 0 0 0;
   font-size: 16px;
   color: #fff;
   margin-bottom: 30px;
@@ -47,8 +46,8 @@ body {
   outline: none;
   background: transparent;
 }
-.formulario-studenthome-box-arrendador .user-box input {
-  width: 100%;
+.formulario-studenthome-box-estudiante .user-box input {
+  width: 96%;
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
@@ -59,7 +58,7 @@ body {
   background: transparent;
 
 }
-.formulario-studenthome-box-arrendador .user-box textarea {
+.formulario-studenthome-box-estudiante .user-box textarea {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -70,43 +69,42 @@ body {
   outline: none;
   background: transparent;
 }
-.formulario-studenthome-box-arrendador .user-box label {
+.formulario-studenthome-box-estudiante .user-box label {
   position: absolute;
   top:0;
   left: 0;
-  padding: 5px 0;
+  padding: 5px 10px 5px 5px;
   font-size: 20px;
   color: #fff;
   pointer-events: none;
   transition: .5s;
 }
 
-
-.formulario-studenthome-box-arrendador .user-box select:focus ~ label,
-.formulario-studenthome-box-arrendador .user-box select:valid ~ label {
+.formulario-studenthome-box-estudiante .user-box select:focus ~ label,
+.formulario-studenthome-box-estudiante .user-box select:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 15px;
 }
 
-.formulario-studenthome-box-arrendador .user-box textarea:focus ~ label,
-.formulario-studenthome-box-arrendador .user-box textarea:valid ~ label {
+.formulario-studenthome-box-estudiante .user-box textarea:focus ~ label,
+.formulario-studenthome-box-estudiante .user-box textarea:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 15px;
 }
 
-.formulario-studenthome-box-arrendador .user-box input:focus ~ label,
-.formulario-studenthome-box-arrendador .user-box input:valid ~ label {
+.formulario-studenthome-box-estudiante .user-box input:focus ~ label,
+.formulario-studenthome-box-estudiante .user-box input:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 15px;
 }
 
-.formulario-studenthome-box-arrendador form button {
+.formulario-studenthome-box-estudiante form button {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -121,7 +119,7 @@ body {
   background: #A5F9FD;
 }
 
-.formulario-studenthome-box-arrendador button:hover {
+.formulario-studenthome-box-estudiante button:hover {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
@@ -131,12 +129,12 @@ body {
               0 0 100px #03e9f4;
 }
 
-.formulario-studenthome-box-arrendador button span {
+.formulario-studenthome-box-estudiante button span {
   position: absolute;
   display: block;
 }
 
-.formulario-studenthome-box-arrendador button span:nth-child(1) {
+.formulario-studenthome-box-estudiante button span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -154,7 +152,7 @@ body {
   }
 }
 
-.formulario-studenthome-box-arrendador button span:nth-child(2) {
+.formulario-studenthome-box-estudiante button span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -173,7 +171,7 @@ body {
   }
 }
 
-.formulario-studenthome-box-arrendador button span:nth-child(3) {
+.formulario-studenthome-box-estudiante button span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -192,7 +190,7 @@ body {
   }
 }
 
-.formulario-studenthome-box-arrendador button span:nth-child(4) {
+.formulario-studenthome-box-estudiante button span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -219,7 +217,7 @@ body {
 
 .form-group label{
   top: -20px;
-  padding: 10px 40px 15px 0;
+  padding: 12px 45px 15px 5px;
   left: 0;
   color: #03e9f4;
   font-size: 16px;
