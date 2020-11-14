@@ -87,7 +87,7 @@ public class HabitacionController {
 			e.printStackTrace();
 			System.out.println();
 		}
-		return "/index";
+		return "/habitaciones/registro";
 	}
 	@PostMapping("save")
 	public String save(@ModelAttribute("habitacion") Habitacion habitacion, SessionStatus status) {
