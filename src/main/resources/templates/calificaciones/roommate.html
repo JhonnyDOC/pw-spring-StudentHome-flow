@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/market.css}">
+<link rel="stylesheet" th:href="@{/css/formulariostudenthome.css}">
+<title>Calificaciones</title>
+</head>
+<body>
+
+
+<div class="formulario-studenthome-box">
+	<h2>Calificar Roommate</h2>
+
+<!--  
+	<table class="table table-striped">
+		<thead>
+			<tr>
+
+				<!--   <th scope="col">año</th>
+	     <th scope="col">mes</th>
+	      <th scope="col">comentario</th>
+
+
+			</tr>
+		</thead>
+
+		<tbody>
+
+			<tr th:each="calificacion : ${calificacionRoomate}">
+
+				<!-- redirecciona a la habitacion view y la de la derecha es el texto 
+				<td><a
+					th:href="@{'/calificaciones/view-' + ${calificacion.id}}"
+					th:text="${calificacion.id}">.</a></td>
+				<td th:text="${calificacion.fecha}"></td>
+				<td th:text="${calificacion.comentario}"></td>
+
+				<!--  
+	          <td > 
+	          <ul>
+      		 <li th:each="item : ${habitacion.servicio.nombreServicio}" th:text="${item}"></li>
+  		 	 </ul>
+    		</td>
+	          
+
+	           <td th:text="${habitacion.rentas}"></td>
+	           
+	    
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+-->
+
+	<!-- unorder list -->
+	<!--  
+	<ul th:each="distrito : ${distritos}">
+		<li> 
+			<a th:href="@{'/distritos/view-' + ${distrito.id}}">
+				<img alt="imagen" th:src="@{/images/twitter-icon.png}">
+			</a>  
+			<a th:href="@{'/distritos/view-' + ${distrito.id}}" th:text="${distrito.nombre}">.</a>
+		</li>
+	</ul>	
+	-->
+	<!-- Crear un formulario, ingresar data y enviarlo al Controller -->
+
+	<form th:action="@{/calificacionRoommates/save}" th:object="${calificacionRoommate}"
+		method="post">
+		<div class="row">
+		
+			<div class="card-body text-left">
+
+
+			<div class ="user-box">
+				<input type="date" 
+						id="formGroupExampleInput" th:field="*{fecha}"/>
+				</input>
+					<label>
+					Fecha
+					</label>
+			</div>
+
+
+				<div  class="user-box">
+				<select
+						th:field="*{estudianteUno}"
+						id="estudianteUno">
+						<option th:each="estudianteUno:${roommates}" style="background-color: skyblue;"
+							th:value="${estudianteUno.id}"
+							th:text="${estudianteUno.Persona.nombrePersona}" />
+					</select>
+					
+					<label>
+					Nombre arrendador
+					</label>
+				</div>
+					
+				
+
+				<div  class="user-box">
+				<select
+						th:field="*{estudianteDos}"
+						id="estudianteDos">
+						<option th:each="estudianteDos:${roommates}" style="background-color: skyblue;"
+							th:value="${estudianteDos.id}"
+							th:text="${estudianteDos.Persona.nombrePersona}" />
+					</select>
+					
+					<label>
+					Nombre estudiante
+					</label>
+				
+				</div>
+					
+				
+
+				<div class="user-box">
+					<textarea  id="formGroupExampleInput2"
+						th:field="*{comentario}" rows="5">
+					</textarea>
+					
+					<label>
+					Descripcion calificacion
+					</label>
+				</div>
+				
+				
+
+				<div class="user-box">
+				 <select
+						th:field="*{puntaje}" 
+						id="puntaje">
+						<option th:each="puntaje:${puntajes}" style="background-color: skyblue;"
+							th:value="${puntaje.id}"
+							th:text="${puntaje.nombrePuntaje}" />
+					</select>
+				<label>
+					Puntaje
+					</label>
+				</div>
+				 
+				
+
+			</div>
+		</div>
+	
+	<div class= "center-button">
+			<button  type= "submit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Grabar
+    </button>
+	</div>
+	
+	
+	</form>
+</div>
+
+	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap..min.js}"></script>
+</body>
+</html>

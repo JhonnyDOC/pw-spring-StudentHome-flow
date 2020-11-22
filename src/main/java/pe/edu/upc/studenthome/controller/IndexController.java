@@ -66,7 +66,7 @@ public class IndexController {
 			
 			model.addAttribute("habitaciones", habitaciones);
 			model.addAttribute("habitacion", habitacion);
-			System.out.println("abc1" + habitaciones.size());
+		
 			partitions= org.apache.commons.collections4.ListUtils.partition(habitaciones, 2);
 			// th:with="partitions=${T(org.apache.commons.collections4.ListUtils).partition(habitaciones, 2)}"
 		} catch (Exception e) {

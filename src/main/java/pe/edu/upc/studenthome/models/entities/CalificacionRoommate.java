@@ -25,35 +25,25 @@ public class CalificacionRoommate {
 	private Estudiante estudianteDos;
 	
 	@Id
-	@JoinColumn(name = "anio_id")
-	private String anio;
+	@JoinColumn(name = "fecha")
+	private String fecha;
 	
-	@Id
-	@JoinColumn(name = "mes_id")
-	private String mes;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "puntaje_id")
 	private Puntaje puntaje;
 	
-	@Column(name = "fecha_calificacion_roommate", length = 50 ,nullable = false)
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	@Column(name = "comentario", length = 50 ,nullable = false)
 	private String comentario;
 
-	public String getAnio() {
-		return anio;
-	}
-
-	public void setAnio(String anio) {
-		this.anio = anio;
-	}
-
-	public String getMes() {
-		return mes;
-	}
-
-	public void setMes(String mes) {
-		this.mes = mes;
-	}
 
 	public Estudiante getEstudianteUno() {
 		return estudianteUno;
