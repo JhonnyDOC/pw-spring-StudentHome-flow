@@ -17,7 +17,6 @@ import org.springframework.web.bind.support.SessionStatus;
 import pe.edu.upc.studenthome.models.entities.Arrendador;
 import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Estudiante;
-import pe.edu.upc.studenthome.models.entities.Habitacion;
 import pe.edu.upc.studenthome.service.EstudianteService;
 
 @Controller
@@ -97,6 +96,22 @@ public class EstudianteController {
 			System.err.println(e.getMessage());
 		}
 		return "redirect:/estudiantes";
+	}
+	
+	@GetMapping ("/modificar/{id}")
+	public String modificar (@PathVariable long id, Model model) {
+		try {
+			Optional<Estudiante> estudiante=estudianteService.findById(id);
+			System.out.println("tag" + estudiante.get().getPersona().getNombrePersona());
+			//List<Distrito> distritos = distritoServices.findAll();
+			//model.addAttribute("distritos", distritos);
+			model.addAttribute("estudiante", estudiante.get());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println();
+		}
+		return "/estudiantes/modificar";
 	}
 	
 }
