@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Perfil &dash; arrendador</title>
+<title>Perfil &dash; estudiante</title>
 <meta property="og:title" content="" />
 <meta property="og:image" content="" />
 <meta property="og:url" content="" />
@@ -30,7 +30,6 @@
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
 <link rel="stylesheet" th:href="@{/css/layout.css}">
 
-
 <!-- Theme style  -->
 <link rel="stylesheet" href="css/style.css">
 
@@ -43,11 +42,10 @@
 
 </head>
 <body>
-<body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
-				<a class="navbar-brand" href="">StudentHome</a>
+				<a class="navbar-brand" href="#">StudentHome</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -71,7 +69,7 @@
 								aria-expanded="false"> Registro </a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<a class="dropdown-item" href="#">Estudiante</a> <a
-										class="dropdown-item" href="arrendadores/registro">Arrendador</a>
+										class="dropdown-item" href="#">Arrendador</a>
 								</div></li>
 							<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
 						</ul>
@@ -85,11 +83,13 @@
 	</header>
 	<!--Main Navigation-->
 	</div>
+
+
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
 		<header id="fh5co-header" class="fh5co-cover js-fullheight"
-			role="banner"
+			role="banner "
 			style="background-image: url(images/cover_bg_3.jpg); height: 500px;"
 			data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
@@ -99,7 +99,8 @@
 						<div class="display-t js-fullheight">
 							<div class="display-tc js-fullheight animate-box"
 								data-animate-effect="fadeIn">
-								<img class="profile-thumb" th:src="@{/images/perfilarre2.jpg}"></img>
+								<img class="profile-thumb"
+									th:src="@{/images/estudianteupc2.png}"></img>
 								<h1>
 									<span>Mi perfil</span>
 								</h1>
@@ -115,158 +116,77 @@
 
 		<div id="fh5co-about" class="animate-box">
 			<div class="container">
-				<h1>Datos personales</h1>
+				<h2>Datos personales</h2>
 				<div class="row"></div>
-				<div th:each="arrendador : ${arrendadores}" class="row"
+				<div th:each="estudiante : ${estudiantes}" class="row"
 					style="border-width: 1px; border-style: solid;">
 					<tr>
 						<th>
 							<div class="col-md-4 ">
 								<ul class="info blog-text">
+									<br>
 									<li><span class="first-block">Nombre:</span> <span
-										th:text="${arrendador.persona.nombrePersona}"
+										th:text="${estudiante.persona.nombrePersona}"
 										class="second-block"></span></li>
 									<li><span class="first-block">Apellido:</span><span
-										th:text="${arrendador.persona.apellidoPersona}"
+										th:text="${estudiante.persona.apellidoPersona}"
 										class="second-block"></span></li>
+									<li><span class="first-block">Universidad:</span><span
+										th:text="${estudiante.descripcionUniv}" class="second-block"></span></li>
 									<li><span class="first-block">DNI:</span><span
-										th:text="${arrendador.persona.dni}" class="second-block"></span></li>
+										th:text="${estudiante.persona.dni}" class="second-block"></span></li>
 									<li><span class="first-block">Nombre de usuario:</span><span
-										th:text="${arrendador.usuarioArrendador}" class="second-block">www.yoursite.com</span></li>
+										th:text="${estudiante.usuarioEstudiante}" class="second-block"></span></li>
 									<li><span class="first-block">Teléfono:</span><span
-										th:text="${arrendador.persona.numeroTelefono}"
+										th:text="${estudiante.persona.numeroTelefono}"
 										class="second-block"></span></li>
 									<li><span class="first-block">Dirección:</span><span
-										th:text="${arrendador.persona.direccion}" class="second-block"></span></li>
+										th:text="${estudiante.persona.direccion}" class="second-block"></span></li>
 
 								</ul>
 							</div>
 						</th>
 						<th>
-							<div class="col-md-8">
-								<span th:text="${arrendador.descripcion}" class="second-block"></span>
+
+
+							<div class="col-md-8" align="center">
+
 								<br> <br>
 								<div class="card text-center ">
-									<img th:src="@{/images/arrendador.jpg} " width="300"
+									<img th:src="@{/images/estudiante.png} " width="300"
 										height="300"></img>
+
 								</div>
+
 								<br>
 
-								<div class="card text-center ">
-									<td><a
-										th:href="${ '/arrendadores/modificar/' + arrendador.id}">Editar
-											información</a></td>
-								</div>
-								<!-- <div class="card text-center ">
-								<button  align="center" type="submit" class="btn btn-success">
+								
+								<!--  <div class="card text-center ">
+								<button align="center" type="submit" class="btn btn-success">
 									<i class="fas fa-save"></i> Editar información
 								</button>
 								</div> -->
-
-
 								<br>
 								<ul class="fh5co-social-icons" align="center">
 
-									<li><a href="https://www.facebook.com/profile"><i
-											class="icon-facebook3"></i></a></li>
-									<li><a href="https://www.instagram.com"><i
-											class="icon-instagram2"></i></a></li>
-									<li><a href="https://twitter.com"><i
-											class="icon-twitter2"></i></a></li>
-									<li><a href="https://www.linkedin.com"><i
-											class="icon-linkedin2"></i></a></li>
+									<li><a href="#"><i class="icon-facebook3"></i></a></li>
+									<li><a href="#"><i class="icon-instagram2"></i></a></li>
+									<li><a href="#"><i class="icon-twitter2"></i></a></li>
+									<li><a href="#"><i class="icon-linkedin2"></i></a></li>
 
 								</ul>
-								<br> <br>
+
 
 							</div>
+
 						</th>
 
 					</tr>
 				</div>
+				<!--  <br> <br>
+				<h2>Habitaciones alquiladas</h2>
+				<br> -->
 
-
-				<br> <br>
-				<h2>Habitaciones registradas</h2>
-				<br>
-				<table class="table table-striped"
-					style="border-width: 1px; border-style: solid;">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<!-- <th scope="col">numero Vivienda Externo</th> -->
-							<!--<th scope="col">numero Vivienda Interno</th> -->
-							<th scope="col">Distrito</th>
-							<th scope="col">Direccion</th>
-							<th scope="col">Tipo de inmueble</th>
-							<th scope="col">Descripcion del inmueble</th>
-							<th scope="col">Metros cuadrados</th>
-							<!--<th scope="col">numero Habitaciones</th>-->
-
-							<!--<th scope="col">precio</th>-->
-							<th scope="col">Descripcion del amueblado</th>
-							<th scope="col">Vista previa</th>
-
-
-							<!-- <th scope="col">imagen 2</th>-->
-							<!--<th scope="col">imagen 3</th>-->
-							<!-- <th scope="col">imagen 4</th>-->
-							<!--<th scope="col">arrendador</th>-->
-
-
-
-
-						</tr>
-					</thead>
-
-
-
-					<tbody>
-						<tr th:each="habitacion : ${habitaciones}">
-
-
-							<td><a th:href="@{'/habitaciones/view-' + ${habitacion.id}}"
-								th:text="${habitacion.id}">.</a></td>
-							<!--<td th:text="${habitacion.numeroViviendaExterno}"></td>	 -->
-							<!--  <td th:text="${habitacion.numeroViviendaInterno}"></td>	 -->
-							<td th:text="${habitacion.distrito.nombreDistrito}"></td>
-							<td th:text="${habitacion.direccion}"></td>
-							<td th:text="${habitacion.tipoInmueble.nombreTipoInmueble}"></td>
-							<td th:text="${habitacion.descripcionInmueble}"></td>
-							<td th:text="${habitacion.metrosCuadrados}"></td>
-							<td th:text="${habitacion.descripcionAmueblado}"></td>
-							<td><img th:src="${habitacion.imagen1}" width="200"
-								height="150"></td>
-
-							<!--  <td th:text="${habitacion.numeroHabitaciones}"></td>-->
-
-							<!--<td th:text="${habitacion.precio}"></td>-->
-
-
-
-
-							<!--  <td th:text="${habitacion.imagen2}"></td>-->
-							<!--  <td th:text="${habitacion.imagen3}"></td> -->
-							<!-- <td th:text="${habitacion.imagen4}"></td>-->
-							<!--<td th:text="${habitacion.arrendador.Persona.nombrePersona}"></td>-->
-
-
-
-							<!--  
-	          <td > 
-	          <ul>
-      		 <li th:each="item : ${habitacion.servicio.nombreServicio}" th:text="${item}"></li>
-  		 	 </ul>
-    		</td>
-	          
-
-	           <td th:text="${habitacion.rentas}"></td>
-	           
-	           -->
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
 			</div>
 		</div>
 
@@ -279,15 +199,15 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>StudentHome</h2>
-					<p>©UPC 2020 Teen Technology. Todos los derechos reservados.</p>
+					<p>©UPC 2020-Programación Web. Todos los derechos reservados.</p>
 					<p>
-						<a href="arrendadores/sobrenosotros"
-							class="btn btn-default btn-lg">Sobre nosotros</a>
+						<a href="#" class="btn btn-default btn-lg">Sobre nosotros</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 
 
@@ -317,4 +237,3 @@
 
 </body>
 </html>
-

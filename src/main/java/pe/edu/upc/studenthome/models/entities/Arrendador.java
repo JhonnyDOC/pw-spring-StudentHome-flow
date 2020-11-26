@@ -33,7 +33,7 @@ public class Arrendador {
 	private String descripcion;
 	
 	@Column(name = "contraseñaArrendador", nullable = false)
-	private String contraseñaArrendador;
+	private String contrasenaArrendador;
 	
 	@Column(name = "usuarioArrendador", nullable = false)
 	private String usuarioArrendador;
@@ -66,13 +66,13 @@ public class Arrendador {
 		persona = new Persona();
 	}
 	
-	public String getContraseñaArrendador() {
-		return contraseñaArrendador;
+	public String getContrasenaArrendador() {
+		return contrasenaArrendador;
 	}
 
 
-	public void setContraseñaArrendador(String contraseñaArrendador) {
-		this.contraseñaArrendador = contraseñaArrendador;
+	public void setContrasenaArrendador(String contraseñaArrendador) {
+		this.contrasenaArrendador = contraseñaArrendador;
 	}
 
 

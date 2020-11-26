@@ -20,13 +20,13 @@
 
 			<div class="card text-center">
 				<form th:action="@{/arrendadores/save}" th:object="${arrendador}"
-					method="post">
+					method="post" >
 
-					<div class="card-header">Registro de Arrendador</div>
+					<div class="card-header">Actualizar Arrendador</div>
 					<div class="card-body text-left">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput">Nombres :</label> <input
+								<label for="formGroupExampleInput">Nombres :</label> <input 
 									type="text" class="form-control" id="formGroupExampleInput"
 									th:field="*{persona.nombrePersona}" placeholder="Nombres">
 							</div>
@@ -40,7 +40,7 @@
 
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput">Nombre de Usuario :</label> <input
+								<label for="formGroupExampleInput">Nombre de Usuario :</label> <input 
 									type="text" class="form-control" id="formGroupExampleInput"
 									th:field="*{usuarioArrendador}" placeholder="Nombre de usuario">
 							</div>
@@ -63,7 +63,7 @@
 							</div>
 
 							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">RUC :</label> <input
+								<label for="formGroupExampleInput2">RUC :</label> <input 
 									type="text" class="form-control" id="formGroupExampleInput7"
 									th:field="*{ruc}" placeholder="Escribir el ruc">
 							</div>
@@ -72,18 +72,18 @@
 
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">DNI :</label> <input
+								<label for="formGroupExampleInput2">DNI :</label> <input 
 									type="text" class="form-control" id="formGroupExampleInput3"
 									th:field="*{persona.dni}" placeholder="DNI">
 							</div>
 							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">Teléfono :</label> <input
+								<label for="formGroupExampleInput2">Teléfono :</label> <input 
 									type="text" class="form-control" id="formGroupExampleInput4"
 									th:field="*{persona.numeroTelefono}" placeholder="Teléfono">
 							</div>
 						</div>
 						<div class="form-group col-md-13">
-							<label for="formGroupExampleInput2">Dirección :</label> <input
+							<label for="formGroupExampleInput2">Dirección :</label> <input 
 								type="text" class="form-control" id="formGroupExampleInput5"
 								th:field="*{persona.direccion}" placeholder="Dirección">
 						</div>

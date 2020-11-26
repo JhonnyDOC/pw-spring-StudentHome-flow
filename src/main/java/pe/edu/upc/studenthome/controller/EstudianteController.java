@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import pe.edu.upc.studenthome.models.entities.Arrendador;
+import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Estudiante;
 import pe.edu.upc.studenthome.service.EstudianteService;
 
@@ -38,7 +40,7 @@ public class EstudianteController {
 			e.printStackTrace();
 			System.out.println();
 		}
-		return "/estudiantes/registro";
+		return "/estudiantes/perfilestudiante";
 	}
 	
 	@PostMapping("save")
@@ -60,13 +62,15 @@ public class EstudianteController {
 		return "/";
 	}
 	
+	
+	
 	@GetMapping("view-{id}")
 	public String view(@PathVariable("id") Long id, Model model) {
 		try {
 			Optional<Estudiante> optional = estudianteService.findById(id);
 			if(optional.isPresent()) {
 				model.addAttribute("estudiante", optional.get());
-				return "estudiantes/view";
+				return "estudiantes/registro";
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
