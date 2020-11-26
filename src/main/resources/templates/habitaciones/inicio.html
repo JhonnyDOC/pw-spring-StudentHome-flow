@@ -1,21 +1,14 @@
 <!doctype html>
-<html lang="es"
-	xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
-    <link rel="stylesheet" th:href="@{/css/solid.min.css}">
-    <link rel="stylesheet" th:href="@{/css/market.css}">
-     <link rel="stylesheet" th:href="@{/css/studenthome.css}">
-    
-    <title>Habitaciones</title>
-  </head>
-  <body>
-  
-  	
-   <div class="row">
+
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<link rel="stylesheet" th:href="@{/css/studenthome.css}">
+<title>Habitaciones</title>
+<body>
+
+<header th:replace="layout :: header"></header>
+	<div class="row">
 	    <div class="col">
 	    <form th:action="@{/habitaciones}" method="get">
 	      <input type="text" id="habitacionSearch" name="keyword"  placeholder="Buscar por distrito">
@@ -24,27 +17,24 @@
 	  
 	    </div>
 	    </div>
-	    
-    <h1>Habitaciones </h1>
-    
-  
 
-	    
 
-	
+	<h1>Habitaciones</h1>
+
 	<!-- Crear un formulario, ingresar data y enviarlo al Controller -->
 
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+	<div id="multi-item-example" class="carousel slide carousel-multi-item"
+		data-ride="carousel">
 
-  <!--Controls
+		<!--Controls
   <div class="controls-top">
     <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
     <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
   </div>
   -->
-  <!--/.Controls-->
+		<!--/.Controls-->
 
-  <!--Indicators
+		<!--Indicators
   <ol class="carousel-indicators">
     <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
     <li data-target="#multi-item-example" data-slide-to="1"></li>
@@ -52,201 +42,101 @@
   </ol>
   <!--/.Indicators-->
 
-  <!--Slides-->
- <!--  
+		<!--Slides-->
+		<!--  
   <div   class="carousel-inner" role="listbox">
 -->
-    <!--First slide-->
+		<!--First slide-->
 
-    <!--/.First slide-->
+		<!--/.First slide-->
 
-</div>
-
-
-<div th:each="habitacion:${habitaciones}" id="container" >	
-
-   
-	  <!-- Start	Product details -->
-	<div class="product-details">
-		
-		<!-- 	Product Name -->
-	<h1 th:text="${habitacion.numeroViviendaExterno} + '-'+ ${habitacion.numeroViviendaInterno}"></h1>
-
-
-		
-	
-<!-- The most important information about the product -->
-
-		<p th:text="${habitacion.descripcionInmueble}" class="information"></p>
-		<p th:text="${habitacion.descripcionAmueblado}" class="information"></p>
-	
-		<p th:text="${habitacion.roomate} ?'Admite roomate':'No admite roomate'" class="information" ></p>
-
-		
-		
-<!-- 		Control -->
-<div class="control">
-	
-<!-- Start Button buying -->
-	<button class="btn">
-<!-- 		the Price -->
-	 <span th:text="${habitacion.precio} + ' soles' "  class="price"></span>
-<!-- 		shopping cart icon-->
-   <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-
- </button>
-	<!-- End Button buying -->
-	
-</div>
-			
-</div>
-	
-<!-- 	End	Product details   -->
-	
-	
-	
-<!-- 	Start product image & Information -->
-	
-<div class="product-image">
-	
-	<img  th:src="${habitacion.imagen1}" alt="Omar Dsoky">
-	
-<!-- 	product Information-->
-<div class="info">
-	<h2 th:text="'Tipo de inmueble: '+ ${habitacion.tipoInmueble.nombreTipoInmueble}" ></h2>
-	<ul>
-		<li><strong th:text="'Numero de habitaciones: '+ ${habitacion.numeroHabitaciones}"> </strong></li>
-		<li><strong th:text="'Distrito: ' +${habitacion.distrito.nombreDistrito}" > </strong></li>
-		<li><strong th:text="${habitacion.direccion}"> </strong></li>
-		<li><strong th:text="${habitacion.metrosCuadrados} + ' m^2'"> </strong></li>
-		<li><strong th:text="'Tiene los servicios de: '+ ${habitacion.descripcionServicios}" > </strong></li>
-		<li><strong th:text="'Arrendador: '+ ${habitacion.arrendador.Persona.nombrePersona}"> </strong></li>
-		<li><strong th:text="'Universidad cercana: '+ ${habitacion.universidad.nombreUniversidad}"> </strong></li>
-		
-	</ul>
-</div>
-</div>
-<!--  End product image  -->
-
-    </div>
-
-
-
-
-
-
-
-<main role="main ">
-		<section class="container pt-3">
-	<div class="card text-center">
-	
-		
-
-	<form th:action="@{/habitaciones/save}" th:object="${habitacion}" method="post">
-	 <div class="card-header">Registro de Habitacion</div>
-					<div class="card-body text-left">
-	  <div class="form-row">
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{numeroViviendaExterno}" placeholder="Numero Vivienda Externo">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{numeroViviendaInterno}" placeholder="numero Vivienda Interno">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{numeroHabitaciones}" placeholder="numero Habitaciones">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{direccion}" placeholder="direccion">
-	    </div>
-	    </div>
-	    <div class="row">
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{metrosCuadrados}" placeholder="metros cuadrados">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{precio}" placeholder="precio">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{descripcionInmueble}" placeholder="descripcion Inmueble">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{descripcionAmueblado}" placeholder="descripcion Amueblado">
-	    </div>
-	    <div class="col">
-	      <input type="text" class="form-control" th:field="*{descripcionServicios}" placeholder="descripcion Servicios">
-	    </div>
-	    </div>
-	    <div class="row">
-	     <div class="col">
-	      <input type="text" class="form-control" th:field="*{imagen1}" placeholder="imagen 1">
-	      
-	        
-	     
-	     <div class="form-group row">
-			<label class="col-md-3" for="arrendador">Arrendador:</label> <select
-				th:field="*{arrendador}" class="form-control-sm col-md-6" id="arrendador">
-				<option th:each="arrendador:${arrendadores}" th:value="${arrendador.id}"
-					th:text="${arrendador.Persona.nombrePersona}" />
-			</select>
-		</div>
-	    
-	    <div class="form-group row">
-			<label class="col-md-3" for="distrito">Distrito:</label> <select
-				th:field="*{distrito}" class="form-control-sm col-md-6" id="distrito">
-				<option th:each="distrito:${distritos}" th:value="${distrito.id}"
-					th:text="${distrito.nombreDistrito}" />
-			</select>
-		</div>
-		  <div class="form-group col-md-2">
-								<label for="formGroupExampleInput">¿Admitir roomate? :</label>
-
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio"
-										th:field="*{roomate}" name="inlineRadioOptions"
-										id="inlineRadio1" value="1"> <label
-										class="form-check-label" for="inlineRadio1">Si</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio"
-										th:field="*{roomate}" name="inlineRadioOptions"
-										id="inlineRadio2" value="0"> <label
-										class="form-check-label" for="inlineRadio2">No</label>
-								</div>
-							</div>
-		
-		<div class="form-group row">
-			<label class="col-md-3" for="tipoInmueble">TipoInmueble:</label> <select
-				th:field="*{tipoInmueble}" class="form-control-sm col-md-6" id="tipoInmueble">
-				<option th:each="tipoInmueble:${tipoInmuebles}" th:value="${tipoInmueble.id}"
-					th:text="${tipoInmueble.nombreTipoInmueble}" />
-			</select>
-		</div>
-		
-		<div class="form-group row">
-			<label class="col-md-3" for="universidad">Universidad:</label> <select
-				th:field="*{universidad}" class="form-control-sm col-md-6" id="universidad">
-				<option th:each="universidad:${universidades}" th:value="${universidad.id}"
-					th:text="${universidad.nombreUniversidad}" />
-			</select>
-		</div>
-	   
-	    </div>
-	    </div>
-	  </div>
-	  
-	  
-	  <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Grabar</button>
-	</form>
-	
 	</div>
-	</section>
-	</main>
+
+
+	<div th:each="habitacion:${habitaciones}" id="container">
+
+
+		<!-- Start	Product details -->
+		<div class="product-details">
+
+			<!-- 	Product Name -->
+			<h1
+				th:text="${habitacion.numeroViviendaExterno} + '-'+ ${habitacion.numeroViviendaInterno}"></h1>
 
 
 
-   
 
-    <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-    <script th:src="@{/js/bootstrap..min.js}"></script>
-  </body>
+			<!-- The most important information about the product -->
+
+			<p th:text="${habitacion.descripcionInmueble}" class="information"></p>
+			<p th:text="${habitacion.descripcionAmueblado}" class="information"></p>
+
+			<p
+				th:text="${habitacion.roomate} ?'Admite roomate':'No admite roomate'"
+				class="information"></p>
+
+
+
+			<!-- 		Control -->
+			<div class="control">
+
+				<!-- Start Button buying -->
+				<button class="btn">
+					<!-- 		the Price -->
+					<span th:text="${habitacion.precio} + ' soles' " class="price"></span>
+					<!-- 		shopping cart icon-->
+					<span class="shopping-cart"><i class="fa fa-shopping-cart"
+						aria-hidden="true"></i></span>
+
+				</button>
+				<!-- End Button buying -->
+
+			</div>
+
+		</div>
+
+		<!-- 	End	Product details   -->
+
+
+
+		<!-- 	Start product image & Information -->
+
+		<div class="product-image">
+
+			<img th:src="${habitacion.imagen1}" alt="Omar Dsoky">
+
+			<!-- 	product Information-->
+			<div class="info">
+				<h2
+					th:text="'Tipo de inmueble: '+ ${habitacion.tipoInmueble.nombreTipoInmueble}"></h2>
+				<ul>
+					<li><strong
+						th:text="'Numero de habitaciones: '+ ${habitacion.numeroHabitaciones}">
+					</strong></li>
+					<li><strong
+						th:text="'Distrito: ' +${habitacion.distrito.nombreDistrito}">
+					</strong></li>
+					<li><strong th:text="${habitacion.direccion}"> </strong></li>
+					<li><strong th:text="${habitacion.metrosCuadrados} + ' m^2'">
+					</strong></li>
+					<li><strong
+						th:text="'Tiene los servicios de: '+ ${habitacion.descripcionServicios}">
+					</strong></li>
+					<li><strong
+						th:text="'Arrendador: '+ ${habitacion.arrendador.Persona.nombrePersona}">
+					</strong></li>
+					<li><strong
+						th:text="'Universidad cercana: '+ ${habitacion.universidad.nombreUniversidad}">
+					</strong></li>
+
+				</ul>
+			</div>
+		</div>
+		<!--  End product image  -->
+
+	</div>
+
+	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap..min.js}"></script>
+</body>
 </html>

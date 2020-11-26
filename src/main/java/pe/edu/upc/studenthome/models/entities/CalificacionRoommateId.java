@@ -7,20 +7,28 @@ public class CalificacionRoommateId implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Long estudianteUno;
 	private Long estudianteDos;
-	private String anio;
-	private String mes;
+	private String fecha;
+
 	
 	public CalificacionRoommateId() {
 		
 	}
 	
 	public CalificacionRoommateId(Long estudianteUno, Long estudianteDos,
-			 					  String anio, String mes) {
+			 					  String fecha) {
 		super();
 		this.estudianteUno = estudianteUno;
 		this.estudianteDos = estudianteDos;
-		this.anio = anio;
-		this.mes = mes;
+		this.fecha=fecha;
+
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 
 	public Long getEstudianteUno() {
@@ -40,25 +48,11 @@ public class CalificacionRoommateId implements Serializable{
 	}
 	
 
-	public String getAnio() {
-		return anio;
-	}
 
-	public void setAnio(String anio) {
-		this.anio = anio;
-	}
-
-	public String getMes() {
-		return mes;
-	}
-
-	public void setMes(String mes) {
-		this.mes = mes;
-	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(estudianteUno, estudianteDos, anio, mes);
+		return Objects.hash(estudianteUno, estudianteDos, fecha);
 	}
 
 	@Override
@@ -69,8 +63,7 @@ public class CalificacionRoommateId implements Serializable{
         	return false;
         CalificacionRoommateId calificacionRoommateId = (CalificacionRoommateId) obj;
         if (this.estudianteUno != calificacionRoommateId.estudianteUno ||
-        		this.anio != calificacionRoommateId.anio || 
-        		this.mes != calificacionRoommateId.mes) 
+        		this.fecha != calificacionRoommateId.fecha ) 
         	return false;
         return this.estudianteDos == calificacionRoommateId.estudianteDos;
 	}

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -10,123 +11,131 @@
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/layout.css}">
+<link rel="stylesheet" th:href="@{/css/formulario4studenthome.css}">
+
 
 <title>Estudiantes</title>
 </head>
 <body>
+<header th:replace="layout :: header"></header>
 
-	<main role="main ">
-		<section class="container pt-3">
+<div class="formulario-studenthome-box-estudiante">
+	<h2> Registrar estudiante</h2>
+	
 
-			<div class="card text-center">
 				<form th:action="@{/estudiantes/save}" th:object="${estudiante}"
 					method="post">
 
-					<div class="card-header">Registro de Estudiante</div>
-					<div class="card-body text-left">
+
 						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput">Nombres :</label> <input
+							<div class= "user-box col-md-6">
+								 <input autocomplete="off"
 									type="text" class="form-control" id="formGroupExampleInput"
-									th:field="*{persona.nombrePersona}" placeholder="Nombres">
+									th:field="*{persona.nombrePersona}" >
+									<label for="formGroupExampleInput">Nombres :</label>
 							</div>
 
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">Apellidos :</label> <input
+							<div class= "user-box col-md-6">
+								 <input autocomplete="off"
 									type="text" class="form-control" id="formGroupExampleInput2"
-									th:field="*{persona.apellidoPersona}" placeholder="Apellidos">
+									th:field="*{persona.apellidoPersona}" >
+									<label for="formGroupExampleInput2">Apellidos :</label>
 							</div>
 						</div>
 
 						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput">Nombre de Usuario :</label> <input
+							<div class="user-box col-md-6">
+								 <input autocomplete="off"
 									type="text" class="form-control" id="formGroupExampleInput"
-									th:field="*{usuarioEstudiante}" placeholder="Nombre de usuario">
+									th:field="*{usuarioEstudiante}" >
+									<label for="formGroupExampleInput">Nombre de Usuario :</label>
 							</div>
 
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">Contraseña :</label> <input
+							<div class="user-box col-md-6">
+								 <input autocomplete="off"
 									type="text" class="form-control" id="formGroupExampleInput2"
-									th:field="*{contrasenaEstudiante}" placeholder="Contraseña">
+									th:field="*{contrasenaEstudiante}" >
+									<label for="formGroupExampleInput2">Contraseña :</label>
 							</div>
 						</div>
 
 						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="descripcionUniv">Universidad</label> <select
+							<div class="user-box col-md-6">
+								 <select
 									th:field="*{descripcionUniv}" class="form-control">
-									<option value="">Seleccione la universidad</option>
-									<option value=" Universidad Nacional del Callao (UNAC)">
+									<option style="background-color: skyblue;" value="">Seleccione la universidad</option>
+									<option style="background-color: skyblue;" value=" Universidad Nacional del Callao (UNAC)">
 										Universidad Nacional del Callao (UNAC)</option>
-									<option
+									<option style="background-color: skyblue;"
 										value=" Universidad Nacional Mayor de San Marcos (UNMSM)">
 										Universidad Nacional Mayor de San Marcos (UNMSM)</option>
-									<option
+									<option style="background-color: skyblue;"
 										value=" Universidad José Faustino Sánchez Carrión (UNJFSC)">
 										Universidad José Faustino Sánchez Carrión (UNJFSC)</option>
-									<option value=" Universidad Nacional Agraria La Molina">
+									<option style="background-color: skyblue;" value=" Universidad Nacional Agraria La Molina">
 										Universidad Nacional Agraria La Molina</option>
-									<option
+									<optionstyle="background-color: skyblue;"
 										value=" Universidad Nacional de Educación E. Guzmán y Valle (UNE)">
 										Universidad Nacional de Educación E. Guzmán y Valle (UNE)</option>
-									<option value=" Universidad Nacional de Ingeniería (UNI)">
+									<option style="background-color: skyblue;" value=" Universidad Nacional de Ingeniería (UNI)">
 										Universidad Nacional de Ingeniería (UNI)</option>
-									<option
+									<option style="background-color: skyblue;"
 										value=" Universidad Nacional Federico Villarreal (UNFV)">
 										Universidad Nacional Federico Villarreal (UNFV)</option>
-									<option value=" Universidad Privada San Juan Bautista (UPSJB)">
+									<option style="background-color: skyblue;" value=" Universidad Privada San Juan Bautista (UPSJB)">
 										Universidad Privada San Juan Bautista (UPSJB)</option>
-									<option value=" Universidad Inca Garcilaso de la Vega (UIGV)">
+									<option style="background-color: skyblue;" value=" Universidad Inca Garcilaso de la Vega (UIGV)">
 										Universidad Inca Garcilaso de la Vega (UIGV)</option>
-									<option value=" Universidad Peruana de Las Américas">
+									<option style="background-color: skyblue;" value=" Universidad Peruana de Las Américas">
 										Universidad Peruana de Las Américas</option>
-									<option value=" Universidad Tecnológica del Perú (UTP) ">
+									<option style="background-color: skyblue;" value=" Universidad Tecnológica del Perú (UTP) ">
 										Universidad Tecnológica del Perú (UTP)</option>
-									<option value=" Universidad del Pacifico (UP)">
+									<option style="background-color: skyblue;" value=" Universidad del Pacifico (UP)">
 										Universidad del Pacifico (UP)</option>
-									<option
+									<option style="background-color: skyblue;"
 										value=" Universidad Peruana de Ciencias e Informática (UPCI)">
 										Universidad Peruana de Ciencias e Informática (UPCI)</option>
-									<option
+									<option style="background-color: skyblue;"
 										value=" Universidad Femenina del Sagrado Corazón (UNIFE)">Universidad
 										Femenina del Sagrado Corazón (UNIFE)</option>
-									<option value=" Universidad San Ignacio de Loyola (USIL)">
+									<option style="background-color: skyblue;" value=" Universidad San Ignacio de Loyola (USIL)">
 										Universidad San Ignacio de Loyola (USIL)</option>
-									<option
+									<option style="background-color: skyblue;"
 										value=" Universidad Peruana de Ciencias Aplicadas (UPC)">Universidad
 										Peruana de Ciencias Aplicadas (UPC)</option>
-									<option value=" Universidad Ricardo Palma (URP)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Ricardo Palma (URP)">Universidad
 										Ricardo Palma (URP)</option>
-									<option value=" Universidad Marcelino Champagnat (UMCH)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Marcelino Champagnat (UMCH)">Universidad
 										Marcelino Champagnat (UMCH)</option>
-									<option value=" Universidad de Lima (ULIMA) ">Universidad
+									<option style="background-color: skyblue;" value=" Universidad de Lima (ULIMA) ">Universidad
 										de Lima (ULIMA)</option>
-									<option value=" Universidad de San Martín de Porres (USMP)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad de San Martín de Porres (USMP)">Universidad
 										de San Martín de Porres (USMP)</option>
-									<option
+									<option style="background-color: skyblue;"
 										value=" Pontificia Universidad Católica del Perú (PUCP)">Pontificia
 										Universidad Católica del Perú (PUCP)</option>
-									<option value=" Universidad Peruana Cayetano Heredia (UPCH)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Peruana Cayetano Heredia (UPCH)">Universidad
 										Peruana Cayetano Heredia (UPCH)</option>
-									<option value=" Universidad de Piura (PAD)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad de Piura (PAD)">Universidad
 										de Piura (PAD)</option>
-									<option value=" Universidad Antonio Ruiz de Montoya (UARM) ">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Antonio Ruiz de Montoya (UARM) ">Universidad
 										Antonio Ruiz de Montoya (UARM)</option>
-									<option value=" Universidad Científica del Sur (UCSUR)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Científica del Sur (UCSUR)">Universidad
 										Científica del Sur (UCSUR)</option>
-									<option value=" Universidad Privada del Norte (UPNORTE)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Privada del Norte (UPNORTE)">Universidad
 										Privada del Norte (UPNORTE)</option>
-									<option value=" Universidad Cesar Vallejo (UCV)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Cesar Vallejo (UCV)">Universidad
 										Cesar Vallejo (UCV)</option>
-									<option value=" Universidad Alas Peruanas (UAP)">Universidad
+									<option style="background-color: skyblue;" value=" Universidad Alas Peruanas (UAP)">Universidad
 										Alas Peruanas (UAP)</option>
 
 								</select>
+								<label for="descripcionUniv">Universidad</label>
 
 							</div>
 
-							<div class="form-group col-md-2">
+							<div class="form-group ">
 								<label for="formGroupExampleInput">¿Hacer Roomate? :</label>
 
 								<div class="form-check form-check-inline">
@@ -145,49 +154,44 @@
 						</div>
 
 						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">DNI :</label> <input
+							<div class="user-box col-md-6">
+								<input autocomplete="off"
 									type="text" class="form-control" id="formGroupExampleInput3"
-									th:field="*{persona.dni}" placeholder="DNI">
+									th:field="*{persona.dni}" >
+									<label for="formGroupExampleInput2">DNI :</label> 
 							</div>
-							<div class="form-group col-md-6">
-								<label for="formGroupExampleInput2">Teléfono :</label> <input
+							<div class="user-box col-md-6">
+								 <input autocomplete="off"
 									type="text" class="form-control" id="formGroupExampleInput4"
-									th:field="*{persona.numeroTelefono}" placeholder="Teléfono">
+									th:field="*{persona.numeroTelefono}" >
+									<label for="formGroupExampleInput2">Teléfono :</label>
 							</div>
 						</div>
-						<div class="form-group col-md-13">
-							<label for="formGroupExampleInput2">Dirección :</label> <input
+						<div class="user-box col-md-20">
+							 <input autocomplete="off"
 								type="text" class="form-control" id="formGroupExampleInput5"
-								th:field="*{persona.direccion}" placeholder="Dirección">
+								th:field="*{persona.direccion}" >
+								<label for="formGroupExampleInput2">Dirección :</label>
 						</div>
 
-						<div class="form-row">
-							<div class="card text-center col-md-6">
-								<button type="submit" class="btn btn-info">
-									<i class="fas fa-save"></i> Grabar
+						<div class="center-button">
+							
+								<button type="submit">
+								  <span></span>
+			      				<span></span>
+			     			    <span></span>
+			      			    <span></span>
+							 Grabar
 								</button>
 							</div>
-							<div class="card text-center col-md-6">
-								<a th:href="@{/index}" class="btn btn-danger"><i
-									class="fas fa-ban"></i> Cancelar</a>
-							</div>
-						</div>
-
-
-					</div>
-					<div class="card-footer text-center"></div>
-
 				</form>
 
-			</div>
-
-		</section>
-	</main>
+</div>
 	<script th:src="@{js/jquery-3.4.1.min.js}"></script>
 	<script th:src="@{js/bootstrap.min.js}"></script>
 
 
+<!-- 
 	<table class="table table-striped ">
 		<thead class="thead-dark ">
 			<tr>
@@ -220,7 +224,7 @@
 
 		</tbody>
 	</table>
-
+	 -->
 
 
 </body>

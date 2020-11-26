@@ -15,8 +15,9 @@
 
 
 <div class="formulario-studenthome-box">
-	<h2>Calificar arrendador</h2>
+	<h2>Calificar Roommate</h2>
 
+<!--  
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -24,16 +25,16 @@
 				<!--   <th scope="col">año</th>
 	     <th scope="col">mes</th>
 	      <th scope="col">comentario</th>
-		-->
+
 
 			</tr>
 		</thead>
 
 		<tbody>
 
-			<tr th:each="calificacion : ${calificaciones}">
+			<tr th:each="calificacion : ${calificacionRoomate}">
 
-				<!-- redirecciona a la habitacion view y la de la derecha es el texto -->
+				<!-- redirecciona a la habitacion view y la de la derecha es el texto 
 				<td><a
 					th:href="@{'/calificaciones/view-' + ${calificacion.id}}"
 					th:text="${calificacion.id}">.</a></td>
@@ -50,11 +51,12 @@
 
 	           <td th:text="${habitacion.rentas}"></td>
 	           
-	           -->
+	    
 				<td></td>
 			</tr>
 		</tbody>
 	</table>
+-->
 
 	<!-- unorder list -->
 	<!--  
@@ -69,7 +71,7 @@
 	-->
 	<!-- Crear un formulario, ingresar data y enviarlo al Controller -->
 
-	<form th:action="@{/calificaciones/save}" th:object="${calificacion}"
+	<form th:action="@{/calificacionRoommates/save}" th:object="${calificacionRoommate}"
 		method="post">
 		<div class="row">
 		
@@ -88,11 +90,11 @@
 
 				<div  class="user-box">
 				<select
-						th:field="*{arrendador}"
-						id="arrendador">
-						<option th:each="arrendador:${arrendadores}" style="background-color: skyblue;"
-							th:value="${arrendador.id}"
-							th:text="${arrendador.Persona.nombrePersona}" />
+						th:field="*{estudianteUno}"
+						id="estudianteUno">
+						<option th:each="estudianteUno:${roommates}" style="background-color: skyblue;"
+							th:value="${estudianteUno.id}"
+							th:text="${estudianteUno.Persona.nombrePersona}" />
 					</select>
 					
 					<label>
@@ -104,11 +106,11 @@
 
 				<div  class="user-box">
 				<select
-						th:field="*{estudiante}"
-						id="estudiante">
-						<option th:each="estudiante:${estudiantes}" style="background-color: skyblue;"
-							th:value="${estudiante.id}"
-							th:text="${estudiante.Persona.nombrePersona}" />
+						th:field="*{estudianteDos}"
+						id="estudianteDos">
+						<option th:each="estudianteDos:${roommates}" style="background-color: skyblue;"
+							th:value="${estudianteDos.id}"
+							th:text="${estudianteDos.Persona.nombrePersona}" />
 					</select>
 					
 					<label>

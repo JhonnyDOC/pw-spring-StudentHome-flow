@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 html {
-  height: 100%;
+  height: 180%;
 }
 body {
   margin:0;
@@ -9,12 +9,12 @@ body {
   background: linear-gradient(#15ECE0, #039EF3);
 }
 
-.formulario-studenthome-box {
+.formulario-studenthome-box-habitacion {
   position: absolute;
-  top: 50%;
+  top: 88%;
   left: 50%;
-  width: 500px;
-  padding: 40px;
+  width: 550px;
+  padding: 50px;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.5);
   box-sizing: border-box;
@@ -22,8 +22,8 @@ body {
   border-radius: 10px;
 }
 
-.formulario-studenthome-box h2 {
-  margin: 0 0 5px;
+.formulario-studenthome-box-habitacion h2 {
+  margin: 0 0 15px;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -31,11 +31,11 @@ body {
   
 }
 
-.formulario-studenthome-box .user-box {
+.formulario-studenthome-box-habitacion .user-box {
   position: relative;
 }
 
-.formulario-studenthome-box .user-box select {
+.formulario-studenthome-box-habitacion .user-box select {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -46,11 +46,11 @@ body {
   outline: none;
   background: transparent;
 }
-.formulario-studenthome-box .user-box input {
+.formulario-studenthome-box-habitacion .user-box input {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff !important;
+  color: #fff;
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #fff;
@@ -58,7 +58,7 @@ body {
   background: transparent;
 
 }
-.formulario-studenthome-box .user-box textarea {
+.formulario-studenthome-box-habitacion .user-box textarea {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -69,7 +69,7 @@ body {
   outline: none;
   background: transparent;
 }
-.formulario-studenthome-box .user-box label {
+.formulario-studenthome-box-habitacion .user-box label {
   position: absolute;
   top:0;
   left: 0;
@@ -81,31 +81,31 @@ body {
 }
 
 
-.formulario-studenthome-box .user-box select:focus ~ label,
-.formulario-studenthome-box .user-box select:valid ~ label {
+.formulario-studenthome-box-habitacion .user-box select:focus ~ label,
+.formulario-studenthome-box-habitacion .user-box select:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 15px;
 }
 
-.formulario-studenthome-box .user-box textarea:focus ~ label,
-.formulario-studenthome-box .user-box textarea:valid ~ label {
+.formulario-studenthome-box-habitacion .user-box textarea:focus ~ label,
+.formulario-studenthome-box-habitacion .user-box textarea:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 15px;
 }
 
-.formulario-studenthome-box .user-box input:focus ~ label,
-.formulario-studenthome-box .user-box input:valid ~ label {
+.formulario-studenthome-box-habitacion .user-box input:focus ~ label,
+.formulario-studenthome-box-habitacion .user-box input:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 15px;
 }
 
-.formulario-studenthome-box form button {
+.formulario-studenthome-box-habitacion form button {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -120,7 +120,7 @@ body {
   background: #A5F9FD;
 }
 
-.formulario-studenthome-box button:hover {
+.formulario-studenthome-box-habitacion button:hover {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
@@ -130,12 +130,12 @@ body {
               0 0 100px #03e9f4;
 }
 
-.formulario-studenthome-box button span {
+.formulario-studenthome-box-habitacion button span {
   position: absolute;
   display: block;
 }
 
-.formulario-studenthome-box button span:nth-child(1) {
+.formulario-studenthome-box-habitacion button span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -153,7 +153,7 @@ body {
   }
 }
 
-.formulario-studenthome-box button span:nth-child(2) {
+.formulario-studenthome-box-habitacion button span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -172,7 +172,7 @@ body {
   }
 }
 
-.formulario-studenthome-box button span:nth-child(3) {
+.formulario-studenthome-box-habitacion button span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -191,7 +191,7 @@ body {
   }
 }
 
-.formulario-studenthome-box button span:nth-child(4) {
+.formulario-studenthome-box-habitacion button span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -201,79 +201,14 @@ body {
   animation-delay: .75s
 }
 
-.formulario-studenthome-box form a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
 }
-
-.formulario-studenthome-box a:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
-}
-
-.formulario-studenthome-box a span {
-  position: absolute;
-  display: block;
-}
-
-.formulario-studenthome-box a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
-}
-
-
-
-.formulario-studenthome-box a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
-}
-
-
-
-.formulario-studenthome-box a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
-}
-
-
-.formulario-studenthome-box a span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
-}
-
 
 .center-button{
 	display: flex;
@@ -283,9 +218,10 @@ body {
 
 .form-group label{
   top: -20px;
+  padding: 10px 40px 15px 0;
   left: 0;
   color: #03e9f4;
-  font-size: 15px;
+  font-size: 16px;
   pointer-events: none;
   transition: .5s;
 	
