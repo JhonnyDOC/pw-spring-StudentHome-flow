@@ -44,45 +44,8 @@
 </head>
 <body>
 <body>
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<div class="container">
-				<a class="navbar-brand" href="">StudentHome</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<!-- col-auto- START -->
-				<div class="col-auto">
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active"><a class="nav-link" href="#">Inicio
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Alquilar
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> Registro </a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Estudiante</a> <a
-										class="dropdown-item" href="arrendadores/registro">Arrendador</a>
-								</div></li>
-							<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-						</ul>
+	<header th:replace="layout :: header"></header>
 
-					</div>
-				</div>
-				<!-- col-auto- END -->
-			</div>
-		</nav>
-
-	</header>
 	<!--Main Navigation-->
 	</div>
 	<div class="fh5co-loader"></div>
@@ -143,16 +106,17 @@
 							</div>
 						</th>
 						<th>
-							<div class="col-md-8">
+							<div class="col-md-8" align="center">
 								<span th:text="${arrendador.descripcion}" class="second-block"></span>
 								<br> <br>
-								<div class="card text-center ">
-									<img th:src="@{/images/arrendador.jpg} " width="300"
-										height="300"></img>
+								<div>
+									<img align="center" th:src="@{/images/arrendador.jpg} "
+										width="300" height="300"></img>
 								</div>
-								<br>
+								<br> <br>
 
-								<div class="card text-center ">
+
+								<div class="card text-center">
 									<td><a
 										th:href="${ '/arrendadores/modificar/' + arrendador.id}">Editar
 											información</a></td>
@@ -229,6 +193,8 @@
 								th:text="${habitacion.id}">.</a></td>
 							<!--<td th:text="${habitacion.numeroViviendaExterno}"></td>	 -->
 							<!--  <td th:text="${habitacion.numeroViviendaInterno}"></td>	 -->
+
+
 							<td th:text="${habitacion.distrito.nombreDistrito}"></td>
 							<td th:text="${habitacion.direccion}"></td>
 							<td th:text="${habitacion.tipoInmueble.nombreTipoInmueble}"></td>

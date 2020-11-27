@@ -3,10 +3,14 @@ package pe.edu.upc.studenthome.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -94,14 +98,15 @@ public class ArrendadorController {
 	
 
 	@PostMapping("save")
-	public String save(@ModelAttribute("arrendador") Arrendador arrendador, SessionStatus status) {
+	public String save( Arrendador arrendador, SessionStatus status) { 
 		try {
-			arrendadorService.save(arrendador);
+			arrendadorService.save(arrendador); //solo dejar esto
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
+		
 		//Devuelve la URL mapping 
 		return "redirect:/arrendadores";
 	}
@@ -114,45 +119,25 @@ public class ArrendadorController {
 		return "redirect:/login";
 	}
 	
-	@GetMapping ("/modificar/{id}")
-	public String modificar (@PathVariable long id, Model model) {
+	//el controller es el nexo entre las funcionesen el html y la bd
+	@GetMapping ("/modificar/{id}")// getmapping para mostrar una pag web + return. Get mapping url - return html
+	public String modificar ( @PathVariable long id, Model model) { //pathvariable valor que esta en la url va a ser asignado a la variable id
 		try {
-			Optional<Arrendador> arrendador=arrendadorService.findById(id);
-			System.out.println("tag" + arrendador.get().getPersona().getNombrePersona());
-			List<Distrito> distritos = distritoServices.findAll();
+			Optional<Arrendador>arrendador=arrendadorService.findById(id); //busca en la bd a que arrendador le pertenece el id
+			System.out.println("tag" + arrendador.get().getPersona().getNombrePersona()); //anexo de depuracion borrar luego
+			List<Distrito> distritos = distritoServices.findAll();//brinda todos los distritos
 			model.addAttribute("distritos", distritos);
-			model.addAttribute("arrendador", arrendador.get());
+			model.addAttribute("arrendador", arrendador.get()); //azul es el nombre del obj que enviamos al html, el que hace el envio es el model
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println();
 		}
-		return "/arrendadores/modificar";
+		return "/arrendadores/modificar"; //a que html me dirige
 	}
 	
-	//@RequestMapping("/modificar/{id}")
-	//public String (@PathVariable int id, Model model, RedirectAttributes objRedir) throws ParseException{
-		//model.addAttribute("arrendador", arrendador);
-		//return "";
-		
-	//}
-	
-	
-	//@RequestMapping("/modificar/{id}")
-	//public String modificar(@PathVariable int id, Model model, RedirectAttributes objRedir) throws ParseException {
-		//Optional<Receta> objReceta = rService.listarId(id);
-	//if (objReceta == null) {
-	//	objRedir.addFlashAttribute("mensaje", "Ocurrió un error");
-	//	return "redirect:/recetas/listar";
-	//} else {
-	//	model.addAttribute("listaUsuarios", uService.listar());
-	//	model.addAttribute("listaCategorias", cService.listar());
-	//	if (objReceta.isPresent())
-	//	objReceta.ifPresent(o -> model.addAttribute("receta", o));
-				//	return "/usuario/recetas";
-	//}
-	//}
-	
+
 	@GetMapping("view-{id}")
 	public String view(@PathVariable("id") Long id, Model model) {
 		try {
