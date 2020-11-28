@@ -42,64 +42,65 @@
 
 </head>
 <body>
-<header>
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<div class="container">
-					<a class="navbar-brand" href="#">StudentHome</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse"
-						data-target="#navbarSupportedContent"
-						aria-controls="navbarSupportedContent" aria-expanded="false"
-						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<!-- col-auto- START -->
-					<div class="col-auto">
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav mr-auto">
-								<li class="nav-item active"><a class="nav-link" href="#">Inicio
-										<span class="sr-only">(current)</span>
-								</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Alquilar
-										<span class="sr-only">(current)</span>
-								</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-								<li class="nav-item dropdown"><a
-									class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-									role="button" data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false"> Registro </a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<a class="dropdown-item" href="#">Estudiante</a> <a
-											class="dropdown-item" href="#">Arrendador</a>
-									</div></li>
-								<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-							</ul>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="#">StudentHome</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- col-auto- START -->
+				<div class="col-auto">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active"><a class="nav-link" href="#">Inicio
+									<span class="sr-only">(current)</span>
+							</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Alquilar
+									<span class="sr-only">(current)</span>
+							</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> Registro </a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">Estudiante</a> <a
+										class="dropdown-item" href="#">Arrendador</a>
+								</div></li>
+							<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+						</ul>
 
-						</div>
 					</div>
-					<!-- col-auto- END -->
 				</div>
-			</nav>
+				<!-- col-auto- END -->
+			</div>
+		</nav>
 
-		</header>
-		<!--Main Navigation-->
+	</header>
+	<!--Main Navigation-->
 	</div>
 
 
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-		<header id="fh5co-header" class="fh5co-cover js-fullheight" 
-			role="banner " 
-			style="background-image: url(images/cover_bg_3.jpg); height: 500px ;"
+		<header id="fh5co-header" class="fh5co-cover js-fullheight"
+			role="banner "
+			style="background-image: url(images/cover_bg_3.jpg); height: 500px;"
 			data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
-				<div class="row" >
+				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="display-t js-fullheight" >
+						<div class="display-t js-fullheight">
 							<div class="display-tc js-fullheight animate-box"
 								data-animate-effect="fadeIn">
-								<img class="profile-thumb" th:src="@{/images/estudianteupc2.png}" ></img>
+								<img class="profile-thumb"
+									th:src="@{/images/estudianteupc2.png}"></img>
 								<h1>
 									<span>Mi perfil</span>
 								</h1>
@@ -123,14 +124,14 @@
 						<th>
 							<div class="col-md-4 ">
 								<ul class="info blog-text">
-								<br>
+									<br>
 									<li><span class="first-block">Nombre:</span> <span
 										th:text="${estudiante.persona.nombrePersona}"
 										class="second-block"></span></li>
 									<li><span class="first-block">Apellido:</span><span
 										th:text="${estudiante.persona.apellidoPersona}"
 										class="second-block"></span></li>
-										<li><span class="first-block">Universidad:</span><span
+									<li><span class="first-block">Universidad:</span><span
 										th:text="${estudiante.descripcionUniv}" class="second-block"></span></li>
 									<li><span class="first-block">DNI:</span><span
 										th:text="${estudiante.persona.dni}" class="second-block"></span></li>
@@ -146,22 +147,22 @@
 							</div>
 						</th>
 						<th>
-						
-						
-							 <div class="col-md-8" align="center">
-								
+
+
+							<div class="col-md-8" align="center">
+
 								<br> <br>
 								<div class="card text-center ">
-									<img  th:src="@{/images/estudiante.png} " width="300"
+									<img th:src="@{/images/estudiante.png} " width="300"
 										height="300"></img>
-									
+
 								</div>
 								<br>
 
 								<div class="card text-center ">
 									<td><a
-										th:href="${ '/estudiantes/modificar/' + estudiante.id}">Editar tu
-											información</a></td>
+										th:href="${ '/estudiantes/modificar/' + estudiante.id}">Editar
+											tu información</a></td>
 								</div>
 								<!--  <div class="card text-center ">
 								<button align="center" type="submit" class="btn btn-success">
@@ -171,13 +172,24 @@
 								<br>
 								<ul class="fh5co-social-icons" align="center">
 
-									<li><a href="https://www.facebook.com/profile"><i class="icon-facebook3"></i></a></li>
-									<li><a href="https://www.instagram.com"><i class="icon-instagram2"></i></a></li>
-									<li><a href="https://twitter.com"><i class="icon-twitter2"></i></a></li>
-									<li><a href="https://www.linkedin.com/in/jhonny-daryl-oca%C3%B1a-campos-8484a0197/"><i class="icon-linkedin2"></i></a></li>
-</ul>
-								<br> <br>
+									<li><a href="https://www.facebook.com/profile"><i
+											class="icon-facebook3"></i></a></li>
+									<li><a href="https://www.instagram.com"><i
+											class="icon-instagram2"></i></a></li>
+									<li><a href="https://twitter.com"><i
+											class="icon-twitter2"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/jhonny-daryl-oca%C3%B1a-campos-8484a0197/"><i
+											class="icon-linkedin2"></i></a></li>
 
+
+								</ul>
+
+								<br>
+								<div class="card text-center">
+									<td><a th:href="@{/calificaciones/}">Calificar
+											Arrendador</a></td>
+								</div>
 							</div>
 						</th>
 
@@ -185,7 +197,7 @@
 				</div>
 
 
-				<br> <br>
+				<!--<br> <br>
 				<h2>Habitaciones Alquiladas</h2>
 				<br>
 				<table class="table table-striped"
@@ -193,25 +205,15 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
-							<!-- <th scope="col">numero Vivienda Externo</th> -->
-							<!--<th scope="col">numero Vivienda Interno</th> -->
 							<th scope="col">Distrito</th>
 							<th scope="col">Direccion</th>
 							<th scope="col">Tipo de inmueble</th>
 							<th scope="col">Descripcion del inmueble</th>
 							<th scope="col">Metros cuadrados</th>
-							<!--<th scope="col">numero Habitaciones</th>-->
-
-							<!--<th scope="col">precio</th>-->
 							<th scope="col">Descripcion del amueblado</th>
 							<th scope="col">Vista previa</th>
 							<th scope="col">Calificar</th>
 
-
-							<!-- <th scope="col">imagen 2</th>-->
-							<!--<th scope="col">imagen 3</th>-->
-							<!-- <th scope="col">imagen 4</th>-->
-							<!--<th scope="col">arrendador</th>-->
 
 
 
@@ -227,8 +229,7 @@
 
 							<td><a th:href="@{'/habitaciones/view-' + ${habitacion.id}}"
 								th:text="${habitacion.id}">.</a></td>
-							<!--<td th:text="${habitacion.numeroViviendaExterno}"></td>	 -->
-							<!--  <td th:text="${habitacion.numeroViviendaInterno}"></td>	 -->
+						
 							<td th:text="${habitacion.distrito.nombreDistrito}"></td>
 							<td th:text="${habitacion.direccion}"></td>
 							<td th:text="${habitacion.tipoInmueble.nombreTipoInmueble}"></td>
@@ -237,7 +238,7 @@
 							<td th:text="${habitacion.descripcionAmueblado}"></td>
 							<td><img th:src="${habitacion.imagen1}" width="200"
 								height="150"></td>
-							<td><a th:href="@{/calificaciones/' + calificaion.id}">Calificar</a></td>
+							<td><a th:href="@{/calificaciones/}">Calificar</a></td>-->
 
 							<!--  <td th:text="${habitacion.numeroHabitaciones}"></td>-->
 
