@@ -164,7 +164,7 @@ public class HabitacionController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-		return "habitaciones/index";
+		return "/estudiantes/perfilestudiante";
 		
 	}
 }
