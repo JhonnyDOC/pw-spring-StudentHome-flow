@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 html {
-  height: 180%;
+  height: 190%;
 }
 body {
   margin:0;
@@ -11,7 +11,7 @@ body {
 
 .formulario-studenthome-box-habitacion {
   position: absolute;
-  top: 88%;
+  top: 98%;
   left: 50%;
   width: 550px;
   padding: 50px;
