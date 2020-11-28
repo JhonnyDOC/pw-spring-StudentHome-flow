@@ -13,6 +13,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "arrendadores")
@@ -26,11 +29,15 @@ public class Arrendador {
 	@JoinColumn(name = "id")
 	private Persona persona;
 	
+
 	@Column(name = "ruc", length = 11, nullable = false)
 	private String ruc;
 	
+	
+
 	@Column(name = "descripcion", length = 150, nullable = true)
 	private String descripcion;
+	
 	
 	@Column(name = "contraseñaArrendador", nullable = false)
 	private String contrasenaArrendador;
