@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="layout :: head"></head>
 <link rel="stylesheet" th:href="@{/css/studenthome.css}">
 <title>Student Home</title>
@@ -47,14 +48,14 @@
 
 		<section class="container">
 
-			<div class="row">
+			<div class="row" >
 				<div class="col">
-					<form th:action="@{/}" method="get">
+					<form th:action="@{/habitaciones}" method="get">
 						<input type="text" id="habitacionSearch" name="keyword"
-							placeholder="Buscar por distrito">
-						<button type="submit" class="btn btn-success">
-							<i class="fas fa-find"></i> Buscar
-						</button>
+							placeholder="Buscar por distrito" >
+						<button type="submit" class="btn btn-success ">
+							<i class="fas fa-find"></i> Buscar <i class="fas fa-search">    </i> 
+						  </button>
 					</form>
 
 				</div>

@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head">
 <meta charset="utf-8">
 <meta name="viewport"
@@ -31,43 +32,43 @@
 								<li class="nav-item active"><a class="nav-link"
 									th:href="@{/}">Inicio <span class="sr-only">(current)</span>
 								</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Alquilar
-										<span class="sr-only">(current)</span>
-								</a></li>
 
-								<li class="nav-item dropdown"><a
-									class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-									role="button" data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false"> Perfiles </a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<a class="dropdown-item" th:href="@{/estudiantes}">Perfil
-											Estudiante</a> <a class="dropdown-item"
-											th:href="@{/arrendadores}">Perfil Arrendador</a><a
-											class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-											role="button" data-toggle="dropdown" aria-haspopup="true"
-											aria-expanded="false"> Registro </a>
+								<li sec:authorize="hasRole('ROLE_ARRENDADOR')"
+									class="nav-item active"><a class="nav-link"
+									th:href="@{/habitaciones/registrar}">Registrar inmueble </a></li>
+
+
+
+								
+									<li sec:authorize="hasRole('ROLE_ESTUDIANTE')" class="nav-item dropdown"><a
+										class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+										role="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false"> Calificar </a>
 										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-											<a class="dropdown-item" href="estudiantes/registro">Estudiante</a>
-											<a class="dropdown-item" href="arrendadores/registro">Arrendador</a>
-
-											<li class="nav-item dropdown"><a
-												class="nav-link dropdown-toggle" href="#"
-												id="navbarDropdown" role="button" data-toggle="dropdown"
-												aria-haspopup="true" aria-expanded="false"> Registro </a>
-												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-													<a class="dropdown-item" href="estudiantes/registro">Estudiante</a>
-													<a class="dropdown-item" href="arrendadores/registro">Arrendador</a><a
-														class="nav-link dropdown-toggle" href="#"
-														id="navbarDropdown" role="button" data-toggle="dropdown"
-														aria-haspopup="true" aria-expanded="false"> Registro </a>
-													<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-														<a class="dropdown-item" href="estudiantes/registro">Estudiante</a>
-														<a class="dropdown-item" href="arrendadores/registro">Arrendador</a>
-
-													</div></li>
-											<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-							</ul>
-
+											<a class="dropdown-item" th:href="@{/calificaciones}">Calificar arrendador</a> <a class="dropdown-item"
+												th:href="@{/calificacionRoommate}">Calificar Roommate</a></li>
+								
+								
+						
+								
+									<li sec:authorize="isAnonymous()" class="nav-item dropdown"><a
+										class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+										role="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false"> Registro </a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+											<a class="dropdown-item" th:href="@{/estudiantes/registro}">Estudiante</a>
+											<a class="dropdown-item" th:href="@{/arrendadores/registro}">Arrendador</a>
+								
+								</div></li>
+											<li  sec:authorize="isAnonymous()"class="nav-item active"><a class="nav-link" th:href="@{/login}">Login <i class="fas fa-user"></i>   </a> </li>
+											
+											<li  sec:authorize="hasRole('ROLE_ARRENDADOR')"class="nav-item active"><a class="nav-link" th:href="@{/arrendadores}"><span sec:authentication="name"></span> <i class="fas fa-user-circle"></i> </a> </li>
+											
+											<li  sec:authorize="hasRole('ROLE_ESTUDIANTE')"class="nav-item active"><a class="nav-link" th:href="@{/estudiantes}"><span sec:authentication="name"></span> <i class="fas fa-user-circle"></i> </a> </li>
+											
+											<li  sec:authorize="isAuthenticated()"class="nav-item active"><a class="nav-link" th:href="@{/logout}">Logout <i class="fas fa-times-circle"></i> </a> </li>
+							
+</ul>
 						</div>
 					</div>
 					<!-- col-auto- END -->

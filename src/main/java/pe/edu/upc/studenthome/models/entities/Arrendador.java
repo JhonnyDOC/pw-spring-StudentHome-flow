@@ -33,12 +33,9 @@ public class Arrendador {
 	@Column(name = "ruc", length = 11, nullable = false)
 	private String ruc;
 	
-	
-
 	@Column(name = "descripcion", length = 150, nullable = true)
 	private String descripcion;
-	
-	
+
 	@Column(name = "contraseñaArrendador", nullable = false)
 	private String contrasenaArrendador;
 	

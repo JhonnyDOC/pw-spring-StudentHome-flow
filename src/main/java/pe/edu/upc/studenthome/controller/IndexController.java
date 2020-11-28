@@ -43,5 +43,8 @@ public class IndexController {
 		return "redirect:/habitaciones";
 	}
 	
-	
+	@GetMapping("login")
+	public String login() {
+		return "login";
+	}
 }
