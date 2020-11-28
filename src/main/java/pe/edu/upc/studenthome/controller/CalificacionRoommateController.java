@@ -73,7 +73,7 @@ public class CalificacionRoommateController {
 			System.err.println(e.getMessage());
 		}
 		//Devuelve la URL mapping 
-		return "redirect:/calificaciones/roommate";
+		return "redirect:/calificacionRoommate";
 	}
 	
 }

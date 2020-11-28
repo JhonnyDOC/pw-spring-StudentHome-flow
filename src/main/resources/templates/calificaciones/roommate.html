@@ -8,7 +8,7 @@
 <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
 <link rel="stylesheet" th:href="@{/css/market.css}">
-<link rel="stylesheet" th:href="@{/css/formulariostudenthome.css}">
+<link rel="stylesheet" th:href="@{/css/formulariostudenthome2.css}">
 <title>Calificaciones</title>
 </head>
 <body>
@@ -71,7 +71,7 @@
 	-->
 	<!-- Crear un formulario, ingresar data y enviarlo al Controller -->
 
-	<form th:action="@{/calificacionRoommates/save}" th:object="${calificacionRoommate}"
+	<form th:action="@{/calificacionRoommate/save}" th:object="${calificacionRoommate}"
 		method="post">
 		<div class="row">
 		
@@ -98,7 +98,7 @@
 					</select>
 					
 					<label>
-					Nombre arrendador
+					Nombre estudiante
 					</label>
 				</div>
 					
@@ -114,7 +114,7 @@
 					</select>
 					
 					<label>
-					Nombre estudiante
+					Nombre roommate
 					</label>
 				
 				</div>
@@ -159,6 +159,8 @@
       <span></span>
       Grabar
     </button>
+    
+   
 	</div>
 	
 	
