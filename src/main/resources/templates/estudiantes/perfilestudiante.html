@@ -175,20 +175,99 @@
 									<li><a href="https://www.instagram.com"><i class="icon-instagram2"></i></a></li>
 									<li><a href="https://twitter.com"><i class="icon-twitter2"></i></a></li>
 									<li><a href="https://www.linkedin.com/in/jhonny-daryl-oca%C3%B1a-campos-8484a0197/"><i class="icon-linkedin2"></i></a></li>
-									
-								</ul>
-
+</ul>
+								<br> <br>
 
 							</div>
-
 						</th>
 
 					</tr>
 				</div>
-				<!--  <br> <br>
-				<h2>Habitaciones alquiladas</h2>
-				<br> -->
-				
+
+
+				<br> <br>
+				<h2>Habitaciones Alquiladas</h2>
+				<br>
+				<table class="table table-striped"
+					style="border-width: 1px; border-style: solid;">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<!-- <th scope="col">numero Vivienda Externo</th> -->
+							<!--<th scope="col">numero Vivienda Interno</th> -->
+							<th scope="col">Distrito</th>
+							<th scope="col">Direccion</th>
+							<th scope="col">Tipo de inmueble</th>
+							<th scope="col">Descripcion del inmueble</th>
+							<th scope="col">Metros cuadrados</th>
+							<!--<th scope="col">numero Habitaciones</th>-->
+
+							<!--<th scope="col">precio</th>-->
+							<th scope="col">Descripcion del amueblado</th>
+							<th scope="col">Vista previa</th>
+							<th scope="col">Calificar</th>
+
+
+							<!-- <th scope="col">imagen 2</th>-->
+							<!--<th scope="col">imagen 3</th>-->
+							<!-- <th scope="col">imagen 4</th>-->
+							<!--<th scope="col">arrendador</th>-->
+
+
+
+
+						</tr>
+					</thead>
+
+
+
+					<tbody>
+						<tr th:each="habitacion : ${habitaciones}">
+
+
+							<td><a th:href="@{'/habitaciones/view-' + ${habitacion.id}}"
+								th:text="${habitacion.id}">.</a></td>
+							<!--<td th:text="${habitacion.numeroViviendaExterno}"></td>	 -->
+							<!--  <td th:text="${habitacion.numeroViviendaInterno}"></td>	 -->
+							<td th:text="${habitacion.distrito.nombreDistrito}"></td>
+							<td th:text="${habitacion.direccion}"></td>
+							<td th:text="${habitacion.tipoInmueble.nombreTipoInmueble}"></td>
+							<td th:text="${habitacion.descripcionInmueble}"></td>
+							<td th:text="${habitacion.metrosCuadrados}"></td>
+							<td th:text="${habitacion.descripcionAmueblado}"></td>
+							<td><img th:src="${habitacion.imagen1}" width="200"
+								height="150"></td>
+							<td><a th:href="@{/calificaciones/' + calificaion.id}">Calificar</a></td>
+
+							<!--  <td th:text="${habitacion.numeroHabitaciones}"></td>-->
+
+							<!--<td th:text="${habitacion.precio}"></td>-->
+
+
+
+
+							<!--  <td th:text="${habitacion.imagen2}"></td>-->
+							<!--  <td th:text="${habitacion.imagen3}"></td> -->
+							<!-- <td th:text="${habitacion.imagen4}"></td>-->
+							<!--<td th:text="${habitacion.arrendador.Persona.nombrePersona}"></td>-->
+
+
+
+							<!--  
+	          <td > 
+	          <ul>
+      		 <li th:each="item : ${habitacion.servicio.nombreServicio}" th:text="${item}"></li>
+  		 	 </ul>
+    		</td>
+	          
+
+	           <td th:text="${habitacion.rentas}"></td>
+	           
+	           -->
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 

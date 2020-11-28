@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import pe.edu.upc.studenthome.models.entities.Arrendador;
-import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Estudiante;
 import pe.edu.upc.studenthome.service.EstudianteService;
 
@@ -103,8 +101,6 @@ public class EstudianteController {
 		try {
 			Optional<Estudiante> estudiante=estudianteService.findById(id);
 			System.out.println("tag" + estudiante.get().getPersona().getNombrePersona());
-			//List<Distrito> distritos = distritoServices.findAll();
-			//model.addAttribute("distritos", distritos);
 			model.addAttribute("estudiante", estudiante.get());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
