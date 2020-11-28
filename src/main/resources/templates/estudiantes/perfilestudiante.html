@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Perfil &dash; estudiante</title>
+<title>Perfil &dash; Estudiante</title>
 <meta property="og:title" content="" />
 <meta property="og:image" content="" />
 <meta property="og:url" content="" />
@@ -42,52 +42,15 @@
 
 </head>
 <body>
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<div class="container">
-				<a class="navbar-brand" href="#">StudentHome</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<!-- col-auto- START -->
-				<div class="col-auto">
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active"><a class="nav-link" href="#">Inicio
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Alquilar
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> Registro </a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Estudiante</a> <a
-										class="dropdown-item" href="#">Arrendador</a>
-								</div></li>
-							<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-						</ul>
 
-					</div>
-				</div>
-				<!-- col-auto- END -->
-			</div>
-		</nav>
 
-	</header>
+	<body>
+	<header th:replace="layout :: header"></header>
+
 	<!--Main Navigation-->
 	</div>
-
-
 	<div class="fh5co-loader"></div>
-
-	<div id="page">
+<div id="page">
 		<header id="fh5co-header" class="fh5co-cover js-fullheight"
 			role="banner "
 			style="background-image: url(images/cover_bg_3.jpg); height: 500px;"
@@ -148,27 +111,14 @@
 						</th>
 						<th>
 
-
 							<div class="col-md-8" align="center">
 
 								<br> <br>
-								<div class="card text-center ">
-									<img th:src="@{/images/estudiante.png} " width="300"
-										height="300"></img>
+								<div>
+									<img align="center" th:src="@{/images/estudiante.png} "
+										width="300" height="300"></img>
 
 								</div>
-								<br>
-
-								<div class="card text-center ">
-									<td><a
-										th:href="${ '/estudiantes/modificar/' + estudiante.id}">Editar
-											tu información</a></td>
-								</div>
-								<!--  <div class="card text-center ">
-								<button align="center" type="submit" class="btn btn-success">
-									<i class="fas fa-save"></i> Editar información
-								</button>
-								</div> -->
 								<br>
 								<ul class="fh5co-social-icons" align="center">
 
@@ -181,15 +131,22 @@
 									<li><a
 										href="https://www.linkedin.com/in/jhonny-daryl-oca%C3%B1a-campos-8484a0197/"><i
 											class="icon-linkedin2"></i></a></li>
-
-
 								</ul>
-
 								<br>
+								<div class="card text-center ">
+									<td><a
+										th:href="${ '/estudiantes/modificar/' + estudiante.id}">Editar
+											tu información</a></td>
+								</div>
 								<div class="card text-center">
 									<td><a th:href="@{/calificaciones/}">Calificar
 											Arrendador</a></td>
 								</div>
+								<div class="card text-center">
+									<td><a th:href="@{/calificacionRoommate}">Calificar
+											Roommate</a></td>
+								</div>
+
 							</div>
 						</th>
 
@@ -214,18 +171,11 @@
 							<th scope="col">Vista previa</th>
 							<th scope="col">Calificar</th>
 
-
-
-
-
 						</tr>
 					</thead>
 
-
-
 					<tbody>
 						<tr th:each="habitacion : ${habitaciones}">
-
 
 							<td><a th:href="@{'/habitaciones/view-' + ${habitacion.id}}"
 								th:text="${habitacion.id}">.</a></td>
@@ -240,39 +190,12 @@
 								height="150"></td>
 							<td><a th:href="@{/calificaciones/}">Calificar</a></td>-->
 
-							<!--  <td th:text="${habitacion.numeroHabitaciones}"></td>-->
-
-							<!--<td th:text="${habitacion.precio}"></td>-->
-
-
-
-
-							<!--  <td th:text="${habitacion.imagen2}"></td>-->
-							<!--  <td th:text="${habitacion.imagen3}"></td> -->
-							<!-- <td th:text="${habitacion.imagen4}"></td>-->
-							<!--<td th:text="${habitacion.arrendador.Persona.nombrePersona}"></td>-->
-
-
-
-							<!--  
-	          <td > 
-	          <ul>
-      		 <li th:each="item : ${habitacion.servicio.nombreServicio}" th:text="${item}"></li>
-  		 	 </ul>
-    		</td>
-	          
-
-	           <td th:text="${habitacion.rentas}"></td>
-	           
-	           -->
-							<td></td>
-						</tr>
-					</tbody>
+				<td></td>
+				</tr>
+				</tbody>
 				</table>
 			</div>
 		</div>
-
-
 
 	</div>
 	<div id="fh5co-started" class="fh5co-bg-dark">
@@ -282,16 +205,14 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>StudentHome</h2>
 					<p>©UPC 2020-Programación Web. Todos los derechos reservados.</p>
+					<p>Html realizado por Jhonny Ocana</p>
 					<p>
-						<a href="#" class="btn btn-default btn-lg">Sobre nosotros</a>
+						<a th:href="@{/}" class="btn btn-default btn-lg">INICIO</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
@@ -317,5 +238,4 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-</body>
-</html>
+</body></html>
