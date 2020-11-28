@@ -51,6 +51,14 @@ public class Renta {
 	private Arrendador arrendador;
 	
 	@ManyToOne
+	@JoinColumn(name = "estudiante_uno_id")
+	private Estudiante estudianteUno;
+	
+	@ManyToOne
+	@JoinColumn(name = "estudiante_dos_id")
+	private Estudiante estudianteDos;
+	
+	@ManyToOne
 	@JoinColumn(name = "habitacion_id")
 	private Habitacion habitacion;
 	
@@ -173,5 +181,20 @@ public class Renta {
 		this.detalleRentas = detalleRentas;
 	}
 	
+	public Estudiante getEstudianteUno() {
+		return estudianteUno;
+	}
+
+	public void setEstudianteUno(Estudiante estudianteUno) {
+		this.estudianteUno = estudianteUno;
+	}
+
+	public Estudiante getEstudianteDos() {
+		return estudianteDos;
+	}
+
+	public void setEstudianteDos(Estudiante estudianteDos) {
+		this.estudianteDos = estudianteDos;
+	}
 	
 }

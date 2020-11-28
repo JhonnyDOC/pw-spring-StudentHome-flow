@@ -5,6 +5,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,17 +22,20 @@ import org.thymeleaf.util.ListUtils;
 import pe.edu.upc.studenthome.models.entities.Arrendador;
 import pe.edu.upc.studenthome.models.entities.Distrito;
 import pe.edu.upc.studenthome.models.entities.Habitacion;
+import pe.edu.upc.studenthome.models.entities.Renta;
 import pe.edu.upc.studenthome.models.entities.TipoInmueble;
 import pe.edu.upc.studenthome.models.entities.Universidad;
+import pe.edu.upc.studenthome.security.UsuarioDetails;
 import pe.edu.upc.studenthome.service.ArrendadorServices;
 import pe.edu.upc.studenthome.service.DistritoService;
 import pe.edu.upc.studenthome.service.HabitacionService;
+import pe.edu.upc.studenthome.service.RentaService;
 import pe.edu.upc.studenthome.service.TipoInmuebleService;
 import pe.edu.upc.studenthome.service.UniversidadService;
 
 @Controller
 @RequestMapping("/habitaciones")
-
+@SessionAttributes("{habitacionSearch}")
 public class HabitacionController {
 
 	@Autowired
@@ -48,7 +53,8 @@ public class HabitacionController {
 	@Autowired
 	private UniversidadService universidadService;
 	
-
+	@Autowired
+	private RentaService rentaService;
 	
 	@GetMapping("/registrar")
 	public String inicio(Model model , String keyword) {
@@ -144,8 +150,21 @@ public class HabitacionController {
 	}
 	
 	@GetMapping("/detalle")
-	public String detalle() {
-
-		return "habitaciones/detalle";
+	public String detalle(/*@ModelAttribute("habitacionSearch") Habitacion habitacionSearch, Model model*/) {
+		/*
+		model.addAttribute("habitacionSearch", habitacionSearch);
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		UsuarioDetails usuarioDetails = (UsuarioDetails)authentication.getPrincipal();
+		try {
+			Optional<Renta> optional = rentaService.findById(usuarioDetails.getIdSegmento());
+			if(optional.isPresent()) {
+				model.addAttribute("habitacion", optional.get());
 			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		return "habitaciones/index";
+		
+	}
 }

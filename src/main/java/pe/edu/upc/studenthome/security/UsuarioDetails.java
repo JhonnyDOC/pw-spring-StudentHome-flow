@@ -9,6 +9,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import pe.edu.upc.studenthome.models.entities.Usuario;
+import pe.edu.upc.studenthome.utils.Segmento;
 
 public class UsuarioDetails implements UserDetails {
 
@@ -64,4 +65,11 @@ public class UsuarioDetails implements UserDetails {
 		return this.usuario.isEnable();
 	}
 //falta incluir get y set del segmento
+	public Segmento getSegmento() {
+		return this.usuario.getSegmento();
+	}
+	public Integer getIdSegmento() {
+		return this.usuario.getIdSegmento();
+	}
+	
 }
